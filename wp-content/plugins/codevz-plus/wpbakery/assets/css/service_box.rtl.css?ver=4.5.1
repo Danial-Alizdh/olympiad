@@ -1,0 +1,64 @@
+.services div.service_text {
+	padding-right:100px;
+	padding-left:0
+}
+.services.left .service_custom {
+	float: right
+}
+.services.right .service_custom {
+	float: left
+}
+.services_b.left {
+	text-align: right
+}
+.services_b.right {
+	text-align: left
+}
+.services.right div.service_text {
+	padding-left: 100px;
+	padding-right: 0;
+	text-align: left
+}
+.services_b.left div.service_text,
+.services_b.right div.service_text {
+	padding-left: 0;
+	padding-right: 0
+}
+.services_b i {
+	display: inline-block
+}
+.service_img {
+	float: right;
+	margin: 10px 0 0 20px
+}
+.services.right .service_img{
+	float: left;
+	margin:10px 20px 0 0
+}
+.services_b .service_img {
+	margin-right:auto;
+	margin-left:auto
+}
+.services_b.left .service_img,
+.services_b.right .service_img {
+	margin-left: 0;
+	margin-right: 0
+}
+.services_b div.service_text {
+	padding:0
+}
+
+@media screen and (max-width:480px) {
+
+	.services .service_custom i {
+		right: 50%;
+		transform: translateX(50%)
+	}
+	.services.left .service_custom,
+	.services.right .service_custom,
+	.services.left .service_img,
+	.services.right .service_img {
+		float: none
+	}
+
+}

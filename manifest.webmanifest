@@ -1,0 +1,79 @@
+{
+    "lang": "fa-IR",
+    "id": "7c344760",
+    "dir": "rtl",
+    "name": "Olympiad 6th",
+    "scope": "/",
+    "start_url": "/web-application/?isPwa=true",
+    "scope_extensions": [
+        {
+            "origin": "https://*.olympiadaraku.ir"
+        }
+    ],
+    "short_name": "olympiad 6th",
+    "description": "ششمین المپیاد همگانی دانشجویان پسر کشور | دانشگاه اراک",
+    "display_override": [
+        "standalone"
+    ],
+    "display": "standalone",
+    "orientation": "portrait",
+    "handle_links": "auto",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "categories": [
+        "games",
+        "news",
+        "sports"
+    ],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "https://olympiadaraku.ir/wp-content/uploads/2023/06/cropped-512px-logo-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://olympiadaraku.ir/wp-content/uploads/daftplug-instantify/icon-pwa-maskable-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "https://olympiadaraku.ir/wp-content/uploads/2023/06/cropped-512px-logo-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://olympiadaraku.ir/wp-content/uploads/daftplug-instantify/icon-pwa-maskable-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "https://olympiadaraku.ir/wp-content/uploads/2023/06/cropped-512px-logo-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://olympiadaraku.ir/wp-content/uploads/daftplug-instantify/icon-pwa-maskable-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "https://s0.wp.com/mshots/v1/https://olympiadaraku.ir/web-application/?vpw=750&vph=1334",
+            "sizes": "750x1334",
+            "type": "image/png"
+        },
+        {
+            "src": "https://s0.wp.com/mshots/v1/https://olympiadaraku.ir/web-application/?vpw=1280&vph=800",
+            "sizes": "1280x800",
+            "type": "image/png"
+        }
+    ]
+}

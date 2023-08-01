@@ -1,0 +1,23 @@
+.cz_group_parallax {
+	position: relative;
+	min-height: 100px;
+	height: 600px
+}
+.cz_group_parallax img {
+	border-radius: inherit
+}
+.cz_layer_parallax {
+	position: absolute
+}
+
+[class*='cz_parallax_'] {
+	position: relative;
+	z-index: 2;
+	transition: transform .5s cubic-bezier(0, 0, .25, 1)
+}
+[class*='cz_parallax_'] > div {
+	display: block
+}
+[class*='cz_mparallax_'] {
+	transition: transform .8s cubic-bezier(0, 0, .25, 1)
+}

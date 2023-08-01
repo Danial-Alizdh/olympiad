@@ -1,0 +1,22 @@
+div[data-tilt] {
+	transform-style: preserve-3d
+}
+div[data-tilt]:hover {
+	z-index: 2
+}
+a[data-tilt], 
+div[data-tilt], 
+div[data-tilt] > div, 
+div[data-tilt].cz_btn {
+	transition: none
+}
+div[data-tilt] .cz_box_front_inner > div, 
+div[data-tilt] .cz_box_back_inner > div, 
+div[data-tilt].cz_btn span {
+	transition: all .4s ease
+}
+div[data-tilt]:hover .cz_box_front_inner > div, 
+div[data-tilt]:hover .cz_box_back_inner > div, 
+div[data-tilt].cz_btn:hover span {
+	transform: translateZ(20px)
+}

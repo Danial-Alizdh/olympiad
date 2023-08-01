@@ -1,0 +1,75 @@
+ul.cz_countdown {
+	position: relative;
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0
+}
+.cz_countdown li {
+	display: inline-block;
+	text-align: center;
+	padding: 14px 0;
+	margin: 0 20px;
+	box-sizing: content-box
+}
+.s3 .cz_countdown li {
+	width: 86px
+}
+.cz_countdown li span {
+	font-weight: bold;
+	font-size: 24px;
+	position: relative
+}
+.widget .cz_countdown {
+	width: 100%
+}
+.widget .cz_countdown li {
+	display: inline-block;
+	width: 22.5%;
+	padding: 14px 0;
+	margin: 0 1% 0 0
+}
+.rtl .widget .cz_countdown li {
+	margin: 0 0 0 1%
+}
+.ended li {
+	filter: blur(2px);
+	opacity: .2
+}
+.ended .expired {
+	position: absolute;
+	left: 50%;
+	top: 42%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	border: 0;
+	opacity: 1;
+	font-size: 20px;
+	filter: blur(0);
+	display: inline-block;
+	padding: 14px 30px
+}
+.cz_countdown_center_v {
+	display: table;
+	margin: 0 auto !important
+}
+.cz_countdown_center_v li {
+	display: inherit;
+	margin: 0
+}
+.cz_countdown_left_v {float: left}
+.cz_countdown_right_v {float: right}
+.cz_countdown_left_v li,
+.cz_countdown_right_v li {
+	display: block;
+	margin: 0;
+	width: 100%;
+}
+.cz_countdown_inline p {
+	vertical-align: middle;
+	display: inline-block;
+	margin: 0 0 0 10px
+}
+.rtl .cz_countdown_inline p {
+	margin: 0 10px 0 0
+}

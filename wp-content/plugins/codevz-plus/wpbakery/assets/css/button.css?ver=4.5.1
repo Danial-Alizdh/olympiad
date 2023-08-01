@@ -1,0 +1,527 @@
+.cz_btn {
+	position: relative;
+	display: inline-block;
+	border: 0;
+	margin: 0 0 -10px;
+	overflow: hidden;
+	padding: .6em 1.2em;
+	border-style: solid;
+	color: #fff;
+	background: #4e71fe;
+	text-align: initial;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	transition: all .2s ease-in-out
+}
+.elementor-page .cz_btn small {
+	margin-top: 0
+}
+[class*='fx_'] .cz_btn {
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible
+}
+.cz_btn:hover {
+	color: #fff
+}
+.cz_btn_inline {display: inline-block}
+.cz_btn_block a {display: block;text-align:center}
+.cz_btn_left {float: left}
+.cz_btn_center {display: block;width: 100%;text-align: center}
+.cz_btn_right {float: right}
+.cz_btn_no_fx:before, .cz_btn_no_fx:after {display: none}
+
+.cz_btn:before, .cz_btn:after {
+	position: absolute;
+	display: none;
+	content: '';
+	border: 0 !important;
+	padding: 0 !important;
+}
+.cz_btn strong {
+	font-weight: inherit;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.cz_btn_subtitle strong, 
+.cz_btn_subtitle i {
+	display: inline-block;
+	vertical-align: middle
+}
+.cz_btn span {
+	position: relative;
+	z-index: 1;
+	display: block;
+	vertical-align: middle;
+	white-space: nowrap;
+	transition: all .3s ease-in-out
+}
+.cz_btn b {
+	width: auto;
+	white-space: nowrap;
+	padding: inherit;
+	margin: 0;
+	opacity: 0;
+	font-weight: inherit;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+	transition: all .3s ease-in-out
+}
+.cz_btn:hover span {opacity: 0}
+.cz_btn:hover b {opacity: 1}
+.cz_btn_txt_no_fx:hover span {opacity: 1}
+.cz_btn_txt_no_fx:hover b {opacity: 0}
+.cz_btn i {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	letter-spacing: 0;
+	margin: 0 8px 0 0;
+	width: 1em;
+	height: 1em;
+	line-height: 1em;
+	text-align: center;
+	box-sizing: content-box
+}
+.cz_btn_icon_after i {
+	margin: 0 0 0 8px
+}
+.cz_btn_has_image i {
+	width: auto;
+	height: auto;
+	line-height: initial;
+	overflow: hidden
+}
+.cz_btn img {
+    width: inherit;
+	transition: all .3s ease-in-out
+}
+.cz_btn:hover img:first-child,
+.cz_btn img:last-child {
+	opacity: 0
+}
+.cz_btn img:last-child {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+.cz_btn:hover img:last-child {
+	opacity: 1
+}
+
+/* Button Text Move Up */
+.cz_btn_txt_move_up b {transform: translate(-50%, 25%)}
+.cz_btn_txt_move_up:hover b {opacity: 1;transform: translate(-50%, -50%)}
+.cz_btn_txt_move_up:hover span {opacity: 0;transform: translateY(-50%)}
+
+/* Button Text Move Down */
+.cz_btn_txt_move_down b {transform: translate(-50%, -100%)}
+.cz_btn_txt_move_down:hover b {opacity: 1;transform: translate(-50%, -50%)}
+.cz_btn_txt_move_down:hover span {opacity: 0;transform: translateY(50%)}
+
+/* Button Text Move Right */
+.cz_btn_txt_move_right b {transform: translate(-100%, -50%)}
+.cz_btn_txt_move_right:hover b {opacity: 1;transform: translate(-50%, -50%)}
+.cz_btn_txt_move_right:hover span {opacity: 0;transform: translateX(100%)}
+
+/* Button Text Move Right */
+.cz_btn_txt_move_left b {transform: translate(100%, -50%)}
+.cz_btn_txt_move_left:hover b {opacity: 1;transform: translate(-50%, -50%)}
+.cz_btn_txt_move_left:hover span {opacity: 0;transform: translateX(-100%)}
+
+.cz_btn_icon_move_up:hover i {
+	animation: btnMoveUpIcon .3s forwards
+}
+@keyframes btnMoveUpIcon {
+	49% {transform: translateY(-100%)}
+	50% {opacity: 0;transform: translateY(100%)}
+	51% {opacity: 1}
+}
+.cz_btn_icon_move_down:hover i {
+	animation: btnMoveDownIcon .3s forwards
+}
+@keyframes btnMoveDownIcon {
+	49% {transform: translateY(100%)}
+	50% {opacity: 0;transform: translateY(-100%)}
+	51% {opacity: 1}
+}
+.cz_btn_icon_move_left:hover i {
+	animation: btnMoveLeftIcon .3s forwards
+}
+@keyframes btnMoveLeftIcon {
+	49% {transform: translateX(-100%)}
+	50% {opacity: 0;transform: translateX(100%)}
+	51% {opacity: 1}
+}
+.cz_btn_icon_move_right:hover i {
+	animation: btnMoveRightIcon .3s forwards
+}
+@keyframes btnMoveRightIcon {
+	49% {transform: translateX(100%)}
+	50% {opacity: 0;transform: translateX(-100%)}
+	51% {opacity: 1}
+}
+
+/* Button Beat */
+.cz_btn_beat {
+	overflow: visible
+}
+.cz_btn_beat:before {
+	display: block;
+	height: 100%;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+	opacity: .6;
+	background: inherit;
+	margin: 0 !important;
+	padding: 10px !important;
+	transform-origin: center center;
+	transform: translate(-50%, -50%) scale(0)
+}
+.cz_btn_beat:hover {
+	transition: background-color .2s .4s, color .1s .3s;
+	animation: BeatFx .4s forwards
+}
+.cz_btn_beat:hover:before {
+	animation: BeatFxB .4s forwards
+}
+@keyframes BeatFx {
+	60% {transform: scale(.8)}
+	85% {transform: scale(1.2)}
+	100% {transform: scale(1)}
+}
+@keyframes BeatFxB {
+	to {opacity: 0;transform: translate(-50%, -50%) scale(1.6)}
+}
+
+/* Button Move up show icon */
+.cz_btn_move_up_icon {
+	overflow: hidden
+}
+.cz_btn_move_up_icon i {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, 100%);
+	margin: 0;
+	transition: all .3s ease-in-out
+}
+.cz_btn_move_up_icon img {
+	margin: 0 auto
+}
+.cz_btn_move_up_icon span strong {
+	display: block;
+	position: relative;
+	transition: all .3s ease-in-out
+}
+.cz_btn_move_up_icon i {opacity: 0}
+.cz_btn_move_up_icon:hover i {opacity: 1;transform: translate(-50%, -50%)}
+.cz_btn_move_up_icon:hover b {opacity: 0}
+.cz_btn_move_up_icon:hover span {opacity: 1}
+.cz_btn_move_up_icon:hover span strong {transform: translateY(-130%) !important}
+
+/* Button Show Hidden Icon */
+.cz_btn_show_hidden_icon i {opacity: 0;margin-right: -14px;transition: all .2s ease-in-out}
+.cz_btn_show_hidden_icon:hover i {opacity: 1;margin-right: 10px}
+.cz_btn_icon_after.cz_btn_show_hidden_icon i {margin-right: 0;margin-left: -14px}
+.cz_btn_icon_after.cz_btn_show_hidden_icon:hover i {margin-right: 0;margin-left: 8px}
+
+/* Button Ghost Icon */
+.cz_btn_ghost_icon {overflow: hidden}
+.cz_btn_ghost_icon i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(3, 3);
+	margin: 0;
+	opacity: .3;
+	transition: all .2s ease-in-out
+}
+.cz_btn_ghost_icon:hover i {opacity: 1;transform: translate(-50%, -50%) scale(1.4, 1.4)}
+.cz_btn_ghost_icon:hover strong {opacity: 0;transform: scale(.8, .8)}
+.cz_btn_zoom_out:hover {animation: none;transform: scale(.9)}
+.cz_btn_zoom_in:hover {animation: none;transform: scale(1.1)}
+.cz_btn_move_up:hover {animation: none;transform: translateY(-6px)}
+
+/* Button Winkle */
+.cz_btn_winkle:hover {animation: BtnFxWinkle .8s forwards}
+@keyframes BtnFxWinkle {
+	0%{transform:translateX(0%)}
+	15%{transform:translateX(-15%) rotate(-5deg)}
+	30%{transform:translateX(10%) rotate(3deg)}
+	45%{transform:translateX(-5%) rotate(-3deg)}
+	60%{transform:translateX(10%) rotate(2deg)}
+	75%{transform:translateX(-5%) rotate(-1deg)}
+	100%{transform:translateX(0%)}
+}
+
+/* Button half bg to full */
+.cz_btn_half_to_fill, .cz_btn_half_to_fill:hover, 
+.cz_btn_half_to_fill_v, .cz_btn_half_to_fill_v:hover {
+	background: none !important;
+	box-shadow: none !important;
+	border: 0 !important;
+	color: #a7a7a7
+}
+.cz_btn_half_to_fill:before,
+.cz_btn_half_to_fill_v:before,
+.cz_btn_half_to_fill:after,
+.cz_btn_half_to_fill_v:after {
+	display: block;
+	background: #111;
+	width: 40px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	transition: all .3s cubic-bezier(.77, 0, .175, 1)
+}
+.cz_btn_half_to_fill:after, .cz_btn_half_to_fill_v:after {
+	opacity: 0
+}
+.cz_btn_half_to_fill_v:before, .cz_btn_half_to_fill_v:after {
+	width: 100%;
+	height: 6px;
+	top: auto;
+	bottom: 0
+}
+.cz_btn_half_to_fill:hover:before, .cz_btn_half_to_fill_v:hover:before,
+.cz_btn_half_to_fill:hover:after, .cz_btn_half_to_fill_v:hover:after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	background: #999
+}
+
+/* Button Absorber */
+.cz_btn_absorber:hover {animation: BtnFxAbsorber .8s forwards}
+@keyframes BtnFxAbsorber {
+	0%, 10%, 20%, 50%, 80% {transform: translateY(0)}
+	40% {transform: translateY(-8px)}
+	60% {transform: translateY(-8px)}
+}
+
+/* Button OutIn */
+.cz_btn_zoom_out_in:hover b {
+	transform-origin: top left;
+	animation: BtnFxOutIn .8s forwards
+}
+@keyframes BtnFxOutIn {
+	0% {transform: scale(1) translate(-50%, -50%)}
+	25% {transform: scale(0) translate(-50%, -50%)}
+	50% {transform: scale(1.2) translate(-50%, -50%)}
+	75% {transform: scale(.8) translate(-50%, -50%)}
+	100% {transform: scale(1) translate(-50%, -50%)}
+}
+
+/* Button Fill */
+.cz_btn_fill_up, .cz_btn_fill_down, 
+.cz_btn_fill_left, .cz_btn_fill_right {
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background: none !important
+}
+.cz_btn_fill_up:before, .cz_btn_fill_down:before, 
+.cz_btn_fill_left:before, .cz_btn_fill_right:before,
+.cz_btn_fill_up:after, .cz_btn_fill_down:after, 
+.cz_btn_fill_left:after, .cz_btn_fill_right:after {
+	display: block;
+	top: -1px;
+	left: -1px;
+	width: calc( 100% + 2px );
+	height: calc( 100% + 2px );
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+	background: #111;
+	transform: translateY(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: all .3s ease-in-out
+}
+.cz_btn_fill_up:after {transform: translateY(100%);background: #999}
+.cz_btn_fill_up:hover:before {transform: translateY(-100%)}
+
+.cz_btn_fill_down:after {transform: translateY(-100%);background: #999}
+.cz_btn_fill_down:hover:before {transform: translateY(100%)}
+
+.cz_btn_fill_left:after {transform: translateX(100%);background: #999}
+.cz_btn_fill_left:hover:before {transform: translateX(-100%)}
+
+.cz_btn_fill_right:after {transform: translateX(-100%);background: #999}
+.cz_btn_fill_right:hover:before {transform: translateX(100%)}
+
+.cz_btn_fill_up:hover:after, .cz_btn_fill_down:hover:after,
+.cz_btn_fill_left:hover:after, .cz_btn_fill_right:hover:after {transform: translateY(0)}
+
+/* Button Flash */
+.cz_btn_flash:hover {
+	opacity: 1;
+	animation: czFlashFx 1s forwards
+}
+@keyframes czFlashFx {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+
+/* Button Shine */
+.cz_btn_shine:before {
+	top: 0;
+	left: 125%;
+	z-index: 2;
+	display: block;
+	width: 50%;
+	height: 100%;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	animation: btnShineDef .7s forwards;
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%) !important;
+	transform: skewX(-25deg)
+}
+.cz_btn_shine:hover:before {
+	left: -125%;
+	animation: btnShine .7s forwards
+}
+@keyframes btnShine {
+	100% {left: 125%}
+}
+@keyframes btnShineDef {
+	100% {left: -125%}
+}
+
+/* Button Circle */
+.cz_btn_circle_fade:before {
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	width: 0;
+	height: 0;
+	margin: 0 !important;
+	padding: 0 !important;
+	background: rgba(255,255,255,.2) !important;
+	border: 0 !important;
+	border-radius: 100% !important;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.cz_btn_circle_fade:hover:before {
+	animation: btnCircle .8s forwards
+}
+@keyframes btnCircle {
+	0% {opacity: 1}
+	40% {opacity: 1}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0
+	}
+}
+
+/* Button Blur */
+.cz_btn_blur {
+	animation: btnBlurDef .8s forwards
+}
+.cz_btn_blur:hover {
+	animation: btnBlur .8s forwards
+}
+.cz_btn_blur:hover span {
+	opacity: 0
+}
+.cz_btn_blur .cz_btn_onhover {
+	transform: translate(-50%, -50%) !important
+}
+.cz_btn_blur:hover .cz_btn_onhover {
+	opacity: 1
+}
+@keyframes btnBlur {
+	0% {filter: blur(5px)}
+	100% {filter: blur(0)}
+}
+@keyframes btnBlurDef {
+	0% {filter: blur(5px)}
+	100% {filter: blur(0)}
+}
+
+/* Button Unroll */
+.cz_btn_unroll_v, .cz_btn_unroll_h {
+	background: none !important
+}
+.cz_btn_unroll_v:before, .cz_btn_unroll_h:before,
+.cz_btn_unroll_v:after, .cz_btn_unroll_h:after {
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0 !important;
+	border-radius: 0 !important;
+	transform-origin: center;
+	transform: scale(1, 0);
+	margin: 0 !important;
+	padding: 0 !important;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: all .3s ease-in-out
+}
+.cz_btn_unroll_v:before, .cz_btn_unroll_h:before {
+	background: #999
+}
+.cz_btn_unroll_v:after, .cz_btn_unroll_h:after {
+	background: #111
+}
+.cz_btn_unroll_v:after {transform: scale(1, 0)}
+.cz_btn_unroll_h:after {transform: scale(0, 1)}
+.cz_btn_unroll_v:before, .cz_btn_unroll_h:before,
+.cz_btn_unroll_v:hover:after, .cz_btn_unroll_h:hover:after {
+	transform: scale(1)
+}
+
+@media screen and (max-width: 768px) {
+
+	a.cz_btn.hide_on_tablet {
+		display: none
+	}
+
+}
+
+@media screen and (max-width:480px) {
+
+	.cz_mobile_btn_center {
+		float:none !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		display: table !important;
+		text-align: center !important
+	}
+	.cz_mobile_btn_block {
+		float: none
+	}
+	.cz_mobile_btn_block a {
+		display: block;
+		margin: 0;
+		text-align: center
+	}
+	a.cz_btn.hide_on_tablet {
+		display: block
+	}
+	a.cz_btn.hide_on_mobile {
+		display: none
+	}
+
+}
