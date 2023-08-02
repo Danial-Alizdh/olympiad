@@ -1,0 +1,217 @@
+.cz_separator, .cz_sep {
+	padding:0;
+	margin:0;
+	position: relative;
+	text-align: center
+}
+.cz_sep svg {
+	display: block;
+	margin: -1px;
+	transform: scale(1.1)
+}
+.cz_sep_rotate {transform: rotate(180deg)}
+.cz_sep_rotatex {transform: rotateX(180deg)}
+.cz_sep_rotatey {transform: rotateY(180deg)}
+.cz_separator:before,.cz_separator:after{
+	content: "";
+	pointer-events: none;
+	position: absolute
+}
+.cz_sep_1:before,.cz_sep_2:before{
+	display: block;
+	position: absolute;
+	content: '';
+	width: 100px;
+	height: 100px;
+	top: -50px;
+	left: 50%;
+	margin-left: -50px;
+	background-color: #fff;
+	transform: rotate(45deg);
+	z-index: 1
+}
+.cz_sep_1{
+	padding: 75px 0 0 0;
+	overflow: hidden
+}
+.cz_sep_2:before{
+	top: auto;
+	bottom: -50px
+}
+.cz_sep_2{
+	padding: 0 0 75px 0
+}
+.cz_sep_3,.cz_sep_4{
+	margin: 100px 0 0;
+	padding: 45px 0
+}
+.cz_sep_3:before,.cz_sep_3:after,
+.cz_sep_4:before,.cz_sep_4:after{
+	background: inherit;
+	height: 75%;
+	left: -25%;
+	top: 0;
+	transform: rotate(-2deg);
+	transform-origin: 0 0 0;
+	width: 150%;
+	z-index: -1
+}
+.cz_sep_3:before,.cz_sep_4:before{
+	height: 50%;
+	transform: rotate(-3deg);
+	transform-origin: 3% 0 0
+}
+
+.cz_sep_4:before,.cz_sep_4:after{
+	transform: rotate(2deg);
+	transform-origin: 85% 0 0
+}
+.cz_sep_4:before{
+	transform: rotate(3deg);
+	transform-origin: 85% 0 0
+}
+.cz_sep_5,.cz_sep_6{
+	margin: 60px 0 0;
+	padding: 30px 0
+}
+.cz_sep_5:before,.cz_sep_6:before{
+	background: inherit;
+	border-radius: 50%;
+	height: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	z-index: 10
+}
+.cz_sep_5:before{top:-85px}
+.cz_sep_6:before{bottom:-50px}
+.cz_sep_8{transform: rotate(180deg)}
+.cz_sep_9{line-height: 0}
+.cz_sep_10{transform: rotate(180deg);line-height: 0}
+.cz_sep_11 {margin:70px 0 0}
+.cz_sep_12:before, .cz_sep_12:after,
+.cz_sep_11:before, .cz_sep_11:after {
+	top: -70px;
+	left: 0;
+	z-index: 10;
+	width: 50%;
+	height: 70px;
+	background: inherit
+}
+.cz_sep_12:before,.cz_sep_11:before {
+	border-radius: 0 80px 0 0
+}
+.cz_sep_12:after,.cz_sep_11:after {
+	left: 50%;
+	border-radius: 80px 0 0 0
+}
+.cz_sep_12{
+	transform: rotate(180deg);
+	margin:-1px 0 70px 0;
+	padding-top: 1px
+}
+.vc_element.vc_cz_separator .cz_sep_12:before,
+.vc_element.vc_cz_separator .cz_sep_12:after{
+	top: -40px;
+	height: 80px
+}
+.cz_sep_13,.cz_sep_14 {
+	background-position: 50% center;
+	display: block;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	padding-bottom:1%
+}
+.cz_sep_14 {transform: rotate(180deg);padding-top:1%;padding-bottom: 0}
+.cz_sep_15,.cz_sep_16{
+	padding:100px 0 0;
+	overflow: hidden
+}
+.cz_sep_15:before,
+.cz_sep_15:after,
+.cz_sep_16:before,
+.cz_sep_16:after {
+	border-radius: 50%;
+	height: 200px;
+	top: -100px;
+	transform: rotate(45deg);
+	width: 200px
+}
+.cz_sep_15:before {left: -100px}
+.cz_sep_15:after {right: -100px}
+.cz_sep_16:before {left: -100px;top:0}
+.cz_sep_16:after {right: -100px;top:0}
+.cz_sep_17 ,.cz_sep_18{
+	margin: 0;
+	padding: 36px 0 0;
+	overflow: hidden
+}
+.cz_sep_17:before, .cz_sep_17:after,.cz_sep_18:before, .cz_sep_18:after {
+	height: 50px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+	width: 50px
+}
+.cz_sep_17:before,.cz_sep_18:before{
+	background: inherit;
+	box-shadow: -50px 50px 0 #3498db, 50px -50px 0 #3498db;
+	top: 11px
+}
+.cz_sep_18{
+	transform: rotate(180deg)
+}
+.cz_sep_19:before,.cz_sep_20:before {
+	top: 0
+}
+.cz_sep_19:before, .cz_sep_19:after,
+.cz_sep_20:before, .cz_sep_20:after {
+	left: 0;
+	width: 100%
+}
+.cz_sep_21:before,.cz_sep_22:before {
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%
+}
+.cz_sep_23{line-height: 0}
+.cz_sep_24{
+	transform: rotate(180deg);
+	line-height: 0
+}
+
+.cz_sep2 {
+	position: absolute;
+	z-index: 0;
+	display: grid;
+	width: calc(100% + 1px)
+}
+.cz_sep2 svg {
+	transform: translateX(-50%);
+	left: 50%;
+	position: relative
+}
+.cz_sep2_2 svg, 
+.cz_sep2_3 svg, 
+.cz_sep2_9 svg, 
+.cz_sep2_63 svg {
+	transform: translateX(-50%) rotateX(180deg)
+}
+.cz_sep_top {
+	top: -2px;
+	transform: rotateX(180deg)
+}
+.cz_sep_rotatey_top {
+	top: -2px;
+	transform: rotateX(180deg) rotateY(180deg)
+}
+.cz_sep_bottom {
+	bottom: -1px;
+}
+.cz_sep_rotatey_bottom {
+	bottom: -1px;
+	transform: rotateY(180deg)
+}

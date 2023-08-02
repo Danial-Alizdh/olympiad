@@ -1,0 +1,102 @@
+.cz_acc > div > div {
+	margin-bottom: 10px
+}
+.cz_acc_child {
+	position: relative;
+	display: block;
+	padding: 16px 40px 16px 20px;
+	font-size: 20px;
+	border: 1px solid rgba(167, 167, 167, .2);
+	margin: 0;
+	cursor: pointer;
+	font-weight: 500;
+	transition: all .2s ease-in-out
+}
+.cz_acc_child i:first-child {
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px 0 0
+}
+.cz_acc_child div {
+	line-height: 1.4;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 80%
+}
+.cz_acc_child .cz-acc-number, 
+.cz_acc_child .cz-acc-image {
+	margin: 0 20px 0 0;
+	width: auto;
+	height: auto;
+	font-style: normal !important
+}
+.cz_acc_child_content {
+	display: none;
+	padding: 20px;
+	border: 1px solid rgba(167, 167, 167, .2);
+	border-top: 0;
+	margin: 0 0 10px
+}
+.cz_acc_open_icon,
+.cz_acc_close_icon {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	font-size: 22px;
+	width: 1em;
+	height: 1em;
+	line-height: 1em;
+	text-align: center;
+	transform: translateY(-50%);
+	animation: czAccArrowFX .4s forwards
+}
+@keyframes czAccArrowFX {
+	0% {transform: translateY(-50%) scale(0, 0)}
+	100% {transform: translateY(-50%) scale(1, 1)}
+}
+.cz_acc_open_icon.fa-play,
+.cz_acc_close_icon.fa-play {
+	font-size: 18px;
+	top: calc(50% - 12px)
+}
+i.cz_acc_close_icon {
+	display: none
+}
+.cz_acc_icon_before .cz_acc_child {
+	padding: 16px 20px 16px 50px
+}
+.cz_acc_icon_before .cz_acc_open_icon,
+.cz_acc_icon_before .cz_acc_close_icon {
+	left: 20px;
+	right: auto
+}
+.cz_acc_child small {
+	opacity: 1;
+	font-size: 14px;
+	color: #676767
+}
+.cz_acc_subtitle_inline small {
+	display: inline-block;
+	margin: 0 0 0 8px
+}
+.cz_acc .wpb_content_element {
+	margin-bottom: 0 !important
+}
+
+@media screen and (max-width:480px) {
+
+	.cz_acc_open_icon,
+	.cz_acc_close_icon {
+		font-size: 18px
+	}
+
+}
+
+.elementor-widget-cz_accordion i.cz_acc_close_icon,
+.elementor-widget-cz_accordion i.cz_acc_open_icon {
+	box-sizing: content-box
+}

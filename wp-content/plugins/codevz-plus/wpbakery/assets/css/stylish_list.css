@@ -1,0 +1,131 @@
+ul.cz_stylish_list,
+.cz_post_content ul.cz_stylish_list,
+.rtl ul.cz_stylish_list {
+	margin: 0;
+	padding: 0;
+	list-style: none !important
+}
+.cz_stylish_list li {
+	margin: 0 0 10px;
+	display: list-item;
+	width: 100%;
+	transition: all .2s ease-in-out
+}
+.cz_stylish_list a {
+	display: block;
+	color: inherit !important
+}
+.cz_stylish_list i {
+	font-size: 1em;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	display: block;
+	text-align: center;
+	box-sizing: content-box;
+	transition: all .1s ease-in-out
+}
+.cz_stylish_list li > div > span {
+	line-height: 1.6;
+	display: block
+}
+.cz_stylish_list small {
+	opacity: 1;
+	display: table
+}
+.cz_stylish_list li > div,
+.cz_stylish_list li > a > div {
+	color: inherit;
+	display: table-cell;
+	vertical-align: middle;
+	text-decoration: inherit
+}
+.cz_stylish_list .cz_sl_icon {
+	vertical-align: top
+}
+.cz_stylish_list .cz_sl_image i {
+    width: auto;
+    height: auto
+}
+.cz_stylish_list .xtra-sl-number {
+	font-style: normal
+}
+.cz_sl_icon.cz_sl_image i img {
+	display: inline-block;
+	vertical-align: middle
+}
+.cz_sl_icon_hover_zoom_in li:hover i {transform: scale(1.25, 1.25)}
+.cz_sl_icon_hover_zoom_out li:hover i {transform: scale(0.875, 0.875)}
+.cz_sl_icon_hover_blur li:hover i {animation: stylishListBlur .8s forwards}
+.cz_sl_icon_hover_flash li:hover i {animation: stylishListFlashFx .8s forwards}
+.cz_sl_icon_hover_absorber li:hover i {animation: stylishListAbsorber .8s forwards}
+.cz_sl_icon_hover_wobble li:hover i {animation: stylishListWobbleSkew .8s forwards}
+.cz_sl_icon_hover_zoom_in_fade li:hover i {animation: stylishListZoomIn .8s forwards}
+.cz_sl_icon_hover_zoom_out_fade li:hover i {animation: stylishListZoomOut .8s forwards}
+.cz_sl_icon_hover_push_in li:hover i {animation: stylishListPushIn .8s forwards}
+
+@keyframes stylishListBlur {
+	0% {filter: blur(5px)}
+	100% {filter: blur(0)}
+}
+@keyframes stylishListFlashFx {
+	0% {opacity: .1}
+	100% {opacity: 1}
+}
+@keyframes stylishListAbsorber {
+	0%, 10%, 20%, 50%, 80% {transform: translateY(0)}
+	40% {transform: translateY(-8px)}
+	60% {transform: translateY(-8px)}
+}
+@keyframes stylishListWobbleSkew {
+	16.65% {transform: skew(-12deg)}
+	33.3% {transform: skew(10deg)}
+	49.95% {transform: skew(-6deg)}
+	66.6% {transform: skew(4deg)}
+	83.25% {transform: skew(-2deg)}
+	100% {transform: skew(0)}
+}
+@keyframes stylishListZoomIn {
+	0% {opacity: 0;transform: scale(.9)}
+	50% {opacity: 1;transform: scale(1)}
+}
+@keyframes stylishListZoomOut {
+	0% {opacity: 0;transform: scale(1.1)}
+	50% {opacity: 1;transform: scale(1)}
+}
+@keyframes stylishListPushIn {
+	0% {opacity: 0;transform: translateX(-30%)}
+	60% {opacity: 1;transform: translateX(10%)}
+	100% {opacity: 1;transform: translateX(0)}
+}
+
+@media screen and (max-width:768px) {
+
+	.cz_stylish_list span {
+		text-align: initial !important
+	}
+
+}
+
+@media screen and (max-width:480px) {
+
+	.center_on_mobile .cz_sl_icon,
+	.center_on_mobile li > div,
+	.center_on_mobile li > a > div,
+	.center_on_mobile small {
+		display: block
+	}
+
+	.center_on_mobile .cz_sl_icon > * {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-bottom: 10px
+	}
+
+	.center_on_mobile li > div > span,
+	.center_on_mobile li > a > div > span {
+		display: inline-block;
+		text-align: center !important
+	}
+
+}

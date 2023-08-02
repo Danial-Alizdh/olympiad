@@ -1,0 +1,98 @@
+
+.xtra-inline-element {
+	position: relative;
+	display: inline-block
+}
+
+section.elementor-section.elementor-section-boxed > .elementor-container {
+	width: 1280px;
+	max-width: 100%
+}
+section.elementor-section.elementor-section-boxed .elementor-inner-section .elementor-container {
+	width: 100%;
+	max-width: 100%
+}
+
+.elementor-page.elementor-editor-active [class*="elementor-widget-cz_"] .elementor-widget-container {
+	min-height: 1px
+}
+
+.elementor-page.elementor-editor-active .elementor-widget-cz_popup .elementor-widget-container {
+	min-height: 30px
+}
+
+.elementor-page.elementor-editor-active .elementor-widget-cz_popup .elementor-widget-container:before {
+	content: 'Popup';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	font-size: 11px;
+	opacity: .5;
+}
+
+.elementor-editor-column-settings,
+.elementor-editor-element-settings {
+	margin: 0 !important
+}
+
+.elementor-editor-active .elementor-widget-container .cz_gap {
+	background: repeating-linear-gradient(-45deg, rgba(125,125,125,.2) 1px, rgba(255,255,255,0) 3px, rgba(255,255,255,0) 10px)
+}
+
+.elementor-widget.elementor-widget-cz_gap {
+	margin-bottom: 0 !important
+}
+
+.elementor-element.cz_sticky_col,
+.elementor-element.column-xtra-sticky {
+	display: block
+}
+
+.column-xtra-full-before > .elementor-widget-wrap::before,
+.column-xtra-full-after > .elementor-widget-wrap::after {
+	position: absolute;
+	content: '';
+	top: 0;
+	width: 6000px;
+	height: 100%;
+	background: inherit;
+	visibility: visible;
+	border-radius: inherit;
+	z-index: 0
+}
+
+.column-xtra-full-before > .elementor-widget-wrap::before {
+	right: 0
+}
+
+.column-xtra-full-after > .elementor-widget-wrap::after {
+	left: 0
+}
+
+.column-xtra-full-before .elementor-element,
+.column-xtra-full-after .elementor-element {
+	position: relative;
+	z-index: 1
+}
+
+.elementor-page .elementor-widget-cz_team > div {
+	clip-path: none !important
+}
+
+.elementor-page .cz_slanted_br_div .cz_team_img {
+	clip-path: polygon(0 0, 101% 0, 100% 75%, 0 100%);
+	-webkit-clip-path: polygon(0 0, 101% 0, 100% 75%, 0 100%)
+}
+
+.elementor-element-populated:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	visibility: visible;
+	z-index: -1
+}

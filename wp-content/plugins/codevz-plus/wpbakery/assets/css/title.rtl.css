@@ -1,0 +1,23 @@
+.cz_title_content > span {
+	margin: 0 0 0 15px
+}
+.cz_title_shape {
+	left: auto;
+	right: 0
+}
+.cz_title.tac .cz_title_shape,
+.tac.cz_title_shape {
+	right: 50%;
+	left: auto;
+	transform: translate(50%,-50%)
+}
+.cz_title.tac .shape_rhombus, 
+.cz_title.tac .shape_rhombus_radius {
+	transform: rotate(45deg) translate(50%,-50%)
+}
+.cz_title_content .cz_line_side_solo {
+	margin: 0 0 0 20px
+}
+.cz_title_content .cz_line_side_after {
+	margin: 0 20px 0 0
+}

@@ -1,0 +1,50 @@
+.xtra-share {
+	border: 1px solid rgba(167, 167, 167, 0.3);
+	border-radius: 3px;
+	text-align: center;
+	padding: 10px;
+	margin-top: 30px;
+	align-items: center
+}
+.xtra-share:before {
+	content: attr( data-title )
+}
+.xtra-share a {
+	font-size: 22px;
+	margin: 0 5px;
+	opacity: .5
+}
+.xtra-share a:hover {
+	opacity: 1
+}
+
+@keyframes xtraShareAbsorber {
+	0%, 10%, 20%, 50%, 80% {transform: translateY(0)}
+	40% {transform: translateY(-8px)}
+	60% {transform: translateY(-8px)}
+}
+
+@media screen and (max-width:480px) {
+
+	.cz_social.xtra-share a {
+		font-size: 14px
+	}
+
+}
+
+@media print {
+
+	.xtra-printing > *:not(#xtraPrint),
+	.xtra-printing .xtra-post-title-date {
+		display: none !important
+	}
+	.xtra-printing h1,
+	.xtra-printing h2, 
+	.xtra-printing .xtra-post-title, 
+	.xtra-printing .page_title .section_title {
+		color: #000 !important;
+		font-size: 30px !important;
+		border: 0 !important
+	}
+
+}

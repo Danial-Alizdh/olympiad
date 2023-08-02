@@ -1,0 +1,243 @@
+.cz_title {
+	position: relative;
+	z-index: 1
+}
+.cz_title_has_bg {
+	z-index: 2
+}
+.cz_title.tac .cz_title_content {
+	margin-right: auto;
+	margin-left: auto
+}
+.cz_title_vertical > div, 
+.cz_title_vertical_2 > div {
+	position: absolute;
+	top: -80px;
+	left: 0;
+	z-index: 2;
+	white-space: nowrap;
+	transform: rotate(90deg);
+	transform-origin: bottom left;
+	animation: none !important
+}
+.cz_title_vertical_2 > div {
+	top: -40px;
+	left: 0;
+	transform-origin: 0 0;
+	transform: rotate(-90deg) translateX(-100%)
+}
+.cz_title_vertical.cz_title_vertical_outside > div {
+	top: 0;
+	left: 0;
+	transform-origin: 0 0;
+	transform: rotate(90deg) translate(0, 40%)
+}
+.cz_title_vertical_2.cz_title_vertical_outside > div {
+	transform: rotate(-90deg) translate(-100%, -140%)
+}
+.cz_title_content {
+	display: table;
+	position: relative;
+	word-break: break-word;
+	transition: all .2s ease-in-out
+}
+.cz_title_pos_block .cz_title_content,
+.cz_title_pos_block .cz_title_content > div {
+	width: 100%;
+	display: block
+}
+.cz_title_pos_left .cz_title_content {
+	float: left
+}
+.cz_title_pos_center:not(.cz_title_has_icon) .cz_title_content > div {
+	display: block
+}
+.cz_title_pos_right .cz_title_content {
+	float: right
+}
+.cz_title_content > div {
+	position: relative;
+	z-index: 2;
+	vertical-align: middle;
+	word-break: normal
+}
+.cz_title_content > * {
+	display: table-cell
+}
+.cz_title_has_bg .cz_title_content {
+	padding: 10px 30px
+}
+.cz_title_has_icon .cz_title_content {
+	padding: 10px 0
+}
+.cz_title_content * {
+	margin: 0
+}
+.cz_title_content hr {
+	display: block;
+	margin: 10px 0
+}
+.cz_title_content > span {
+	margin: 0 15px 0 0;
+	position: relative;
+	font-size: 20px;
+	transition: all .2s ease-in-out
+}
+.cz_title_pos_block .cz_title_content > span {
+	margin-right: 0 !important;
+	margin-left: 0 !important
+}
+.cz_title_content > i {
+	font-size: 2em;
+	margin: 0;
+	text-align: center;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	display: inline-block;
+	vertical-align: sub;
+	box-sizing: content-box;
+	transition: all .2s ease-in-out
+}
+.cz_title_content > i:before,
+.cz_title_content > i span,
+.cz_title_content .cz_title_image {
+	display: inline-block
+}
+.cz_title_content .cz_title_image {
+	overflow: hidden;
+	max-width: 120px
+}
+.cz_title_image img {
+	width: inherit
+}
+.cz_title_number {
+	font-style: normal
+}
+.cz_title_shape {
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 140px;
+	font-weight: 900;
+	width: 100%;
+	line-height: 1;
+	pointer-events: none;
+	transform-origin: 0;
+	z-index: 1;
+	word-wrap: initial;
+	transition: all .2s ease-in-out
+}
+.shape_square, .shape_circle, 
+.shape_rectangle, .shape_rhombus, 
+.shape_rhombus_radius {
+	background: #404040;
+	width: 150px;
+	height: 150px
+}
+.shape_circle {
+	border-radius: 100%
+}
+.shape_rhombus, .shape_rhombus_radius {
+	display: inline-block;
+	transform: rotate(45deg)
+}
+.shape_rhombus_radius {
+	border-radius: 20%
+}
+.shape_rectangle {
+	transform: scaleX(2)
+}
+.cz_title_shape_outline {
+	background: none;
+	border: 10px solid
+}
+.cz_title_line {
+	width: 100%;
+	height: 4px;
+	display: block;
+	margin: 0 0 20px
+}
+.cz_title_line span {
+	font-size: 0;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	top: -20px;
+	background: #a7a7a7;
+	width: 60px
+}
+.cz_line_after_title,
+.cz_line_before_title {
+	position: relative
+}
+.cz_title_content .cz_line_side_solo {
+	font-size: 0;
+	height: 4px;
+	width: 50px;
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0 20px 0 0;
+	background: rgba(167, 167, 167, .4)
+}
+.cz_title.tac .cz_title_shape,
+.tac.cz_title_shape {
+	left: 50%;
+	transform: translate(-50%,-50%)
+}
+.cz_title.tac .cz_title_shape.tal,
+.cz_title.tac .cz_title_shape.tar {
+	transform: none
+}
+.cz_title.tac .shape_rectangle {
+	transform: scaleX(2) translate(-50%,-50%)
+}
+.cz_title.tac .shape_rhombus, 
+.cz_title.tac .shape_rhombus_radius {
+	transform: rotate(45deg) translate(-50%,-50%)
+}
+.cz_title .cz_title_shape.tal {
+	left: 0
+}
+.cz_title .cz_title_shape.tar {
+	left: auto;
+	right: 0
+}
+.cz_title_ba_line .cz_title_content {
+	display: inline-block
+}
+.shape_image {
+	width: auto
+}
+.cz_title_content .cz_line_side_after {
+	margin: 0 0 0 20px
+}
+.cz_title .xtra-placeholder {
+	max-width: 100px
+}
+.cz_title_pos_center .cz_title_content {
+	float: none;
+	margin: 0 auto;
+	display: table
+}
+[class*="codevz-fancy-"] {
+	overflow: hidden
+}
+[class*="codevz-fancy-"] .cz_wpe_content > * > span {
+	display: inline-block;
+	position: relative;
+	transform: translateY(130%)
+}
+[class*="codevz-fancy-"] .codevz-start-fancy {
+	animation: fancyFX .8s ease-out forwards
+}
+@keyframes fancyFX {
+	0% {transform: translateY(130%)}
+	100% {transform: translateY(0)}
+}
+.elementor-element .cz_title_content .cz_line_side_solo {
+	vertical-align: middle
+}
+.elementor-element .cz_title_content .cz_title_image {
+	box-sizing: content-box
+}

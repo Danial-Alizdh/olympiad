@@ -1,0 +1,26 @@
+.cz_acc_child {
+	padding: 16px 20px 16px 40px
+}
+.cz_acc_child i:first-child {
+	margin: 0 0 0 10px
+}
+.cz_acc_child .cz-acc-number, 
+.cz_acc_child .cz-acc-image {
+	margin: 0 0 0 20px
+}
+.cz_acc_icon_before .cz_acc_child {
+	padding: 16px 50px 16px 20px
+}
+.cz_acc_open_icon,
+.cz_acc_close_icon {
+	left: 20px;
+	right: auto
+}
+.cz_acc_icon_before .cz_acc_open_icon,
+.cz_acc_icon_before .cz_acc_close_icon {
+	right: 20px;
+	left: auto
+}
+.cz_acc_subtitle_inline small {
+	margin: 0 8px 0 0
+}

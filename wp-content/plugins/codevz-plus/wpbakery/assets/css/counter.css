@@ -1,0 +1,44 @@
+.cz_counter,
+.cz_counter > div > span,
+.cz_counter > div > span i {
+	transition: all .2s ease-in-out
+}
+.cz_counter .cz_svg_bg:before {
+	z-index: -1
+}
+.cz_counter > div > span {
+	font-size: 30px
+}
+.cz_counter.cz_1row .cz_counter_before {
+	margin: 0 10px 0 0
+}
+.cz_counter.cz_1row .cz_counter_after,
+.rtl .cz_counter.cz_1row .cz_counter_before {
+	margin: 0 0 0 10px
+}
+.rtl .cz_counter.cz_1row .cz_counter_after {
+	margin: 0 10px 0 0
+}
+.cz_counter.cz_2rows > div > span {
+	display: block;
+	clear:both;
+	line-height: initial
+}
+.cz_counter.cz_2rows.tac > div > span {
+	margin: 0 auto
+}
+.cz_counter .cz_counter_num_wrap{
+	display: inline-block;
+	line-height: initial;
+	font-size: 48px;
+	font-weight: 700
+}
+.cz_counter .cz_counter_num_wrap i {
+	position: relative;
+	font-style: normal
+}
+.cz_counter .cz_counter_num_wrap:before {
+	content: '';
+	position: static;
+	display: inline-block;
+}

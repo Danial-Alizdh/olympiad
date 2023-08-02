@@ -1,0 +1,28 @@
+.commentlist li.comment li.comment {
+	margin-left: 0;
+	margin-right: 0
+}
+.comment-author {
+	margin-bottom: 10px
+}
+.comment-metadata {
+	float: none;
+	opacity: .7;
+	font-size: 10px;
+	margin-bottom: 20px
+}
+.commentlist li article {
+	padding: 30px
+}
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+	width: 100%
+}
+#comments .commentlist li img.avatar {
+	left:-20px !important
+}
+#commentform > p {
+	display: block;
+	width: 100%
+}

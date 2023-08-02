@@ -1,0 +1,313 @@
+.services {
+	position: relative;
+	transition:all .4s ease-in-out
+}
+.services > img {
+	margin: 0 auto
+}
+.services .cz_btn {
+	margin-top: 30px
+}
+.xtra-service-btn-left {
+	float: left
+}
+.xtra-service-btn-center {
+	float: none;
+	margin: 0 auto;
+	display: table
+}
+.xtra-service-btn-right {
+	float: right
+}
+.services.services_padding {
+	padding: 15px 25px 25px
+}       
+.services.services_padding i {
+	left:25px;
+	top:25px
+}
+.services_b.services_padding i {
+	left: 0;
+	top: 15px
+}
+.services .service_custom i {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	display: table;
+	transition:all .2s ease-in-out;
+	font-size: 2em;
+	line-height: 2em;
+	width: 2em;
+	height: 2em;
+	padding: 0;
+	text-align:center
+}
+.services div.service_text {
+	padding-left: 100px;
+	display: block;
+	word-break: normal;
+	transition: all .2s ease-in-out
+}
+.services .service_custom i{
+	box-sizing: content-box;
+	position: relative;
+	top: 0
+}
+.services.left .service_custom{float: left}
+.services.right .service_custom{float: right}
+.services_b.left .service_custom,
+.services_b.right .service_custom {
+	float: none
+}
+.services_b.left {
+	text-align: left
+}
+.services_b.right {
+	text-align: right
+}
+.services_b .service_custom{display: inline-block;margin: 0 0 20px}
+.services h3 {
+	border-bottom: 4px solid #F1F1F1;
+	display: inline-block;
+	padding: 0 0 8px;
+	transition: all .2s ease-in-out
+}
+.services a.btn {
+	float: right;
+	margin: 20px 0 0
+}
+.services.right .service_custom i {
+	left: auto;
+	right: 0
+}
+.services_b.right .service_custom i {
+	transform: none
+}
+.services.right div.service_text {
+	padding-left: 0;
+	padding-right: 100px;
+	text-align: right
+}
+.services_b.left div.service_text,
+.services_b.right div.service_text {
+	padding-left: 0;
+	padding-right: 0
+}
+.services_b {
+	text-align: center;
+	padding: 25px 10px;
+	box-sizing: border-box
+}
+div.services.services_b div.service_text {
+	padding-left: 0
+}
+.services_b h3 {
+	border-bottom:0;
+	margin-bottom: 0
+}
+.services_b .service_custom i {
+	text-align: center;
+	position: relative;
+	top: -10px;
+	font-size: 40px
+}
+.services_b span.bar {
+	background-color:#F1F1F1;
+	display: block;
+	height: 4px;
+	margin: 10px auto 20px;
+	width: 50px;
+	transition:all .2s ease-in-out
+}
+.services_b:hover span.bar {
+	width: 200px
+}
+.services_b .service_custom i{
+	position:relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-block
+}
+.services_b a.btn {
+	float: none;
+	margin: 20px 0 0 !important
+}
+.services_b p, .services p{
+	line-height: inherit
+}
+.services_b .service_img {
+	float: none;
+	display: table;
+	margin: 0 auto 20px;
+	box-sizing: content-box
+}
+.service_img {
+	float: left;
+	margin: 10px 20px 0 0;
+	text-align: center;
+	width: 80px
+}
+.services.right .service_img{
+	float:right;
+	margin:10px 0 0 20px
+}
+.services.services_b.right .service_img {
+	margin: 0 0 20px
+}
+.service_img img{
+	margin: 0 auto;
+	display: table;
+	max-width: 80px
+}
+.services_b.left .service_img {
+	margin-left: 0;
+	margin-right: 0
+}
+.services_b .service_img img {
+	max-width:100%
+}
+.services > div {
+	transition: all .2s ease-in-out
+}
+.services .services_img_have_hover img {
+	position: relative;
+	width: inherit;
+	opacity: 1;
+	transition: opacity .2s ease-in-out
+}
+.services .services_img_have_hover img:last-child,
+.services:hover .services_img_have_hover img:first-child {
+	opacity: 0
+}
+.services .services_img_have_hover img:last-child {
+	position: absolute;
+	transform: translateY(-100%)
+}
+.services:hover .services_img_have_hover img:last-child {
+	opacity: 1 !important
+}
+.service_number {
+	margin: 0;
+	height: 80px;
+	width: 80px;
+	line-height: 80px;
+	text-align: center
+}
+.services_b i.cz_sb_sep_icon{
+	width: 100%;
+	text-align: center;
+	animation: none;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 1.5em;
+}
+.service_text .cz_wpe_content {
+	overflow-wrap: initial
+}
+
+/* Hexagon */
+.cz_hexagon {
+	position: absolute;
+	width: 82px; 
+	height: 47.34px;
+	margin: 23.67px 0;
+	padding: 0;
+	text-align: center;
+	background: none;
+	border: 0;
+	border-left: solid 3.5px;
+	border-right: solid 3.5px;
+	box-sizing: content-box !important
+}
+.cz_hexagon:before, .cz_hexagon:after {
+	content: "";
+	position: absolute;
+	background: inherit !important;
+	border-color: inherit !important;
+	z-index: 1;
+	left: 10px;
+	width: 57px;
+	height: 58px;
+	transform: scaleY(.5774) rotate(-45deg);
+	box-sizing: content-box !important
+}
+.cz_hexagon i {
+	position: relative;
+	border:none;
+	width: 100%;
+	height: 100%;
+	font-size: 36px;
+	line-height: 36px;
+	margin: 0;
+	padding: 0;
+	top: 5px;
+	z-index: 9;
+	left:auto;
+	vertical-align: middle;
+	transform: none
+}
+.services_b .cz_hexagon i {
+	top: 3px;
+	border: 0;
+	background: none;
+	border-radius: 100px;
+}
+.cz_hexagon:before {
+	top: -31.5px;
+	border-top: solid 4.8px;
+	border-right: solid 4.8px
+}
+.cz_hexagon:after {
+	bottom: -31.5px;
+	border-bottom: solid 4.8px;
+	border-left: solid 4.8px
+}
+.services_b .cz_hexagon{position: relative;margin:40px auto}
+.services.style9 div.service_text{padding-left: 110px}
+.services.right .cz_hexagon{right:0}
+.services.style9.right div.service_text {padding-right: 110px}
+
+.cz_sbi_fx_0:hover .service_custom, .cz_sbi_fx_0:hover .service_img {animation: socialZoomOut .4s forwards}
+.cz_sbi_fx_1:hover .service_custom, .cz_sbi_fx_1:hover .service_img {animation: socialZoomIn .3s forwards}
+.cz_sbi_fx_2:hover .service_custom, .cz_sbi_fx_2:hover .service_img {animation: socialFxB .3s forwards}
+.cz_sbi_fx_3:hover .service_custom, .cz_sbi_fx_3:hover .service_img {animation: socialFxC .3s forwards}
+.cz_sbi_fx_4:hover .service_custom, .cz_sbi_fx_4:hover .service_img {animation: socialFxD .3s forwards}
+.cz_sbi_fx_5:hover .service_custom, .cz_sbi_fx_5:hover .service_img {animation: socialFxE .3s forwards}
+.cz_sbi_fx_6:hover .service_custom, .cz_sbi_fx_6:hover .service_img {animation: socialFxF .4s forwards}
+.cz_sbi_fx_7a:hover .service_custom, .cz_sbi_fx_7a:hover .service_img {transform: translateZ(0);animation: wobble .5s forwards}
+.cz_sbi_fx_7:hover .service_custom, .cz_sbi_fx_7:hover .service_img {transform: translateZ(0);animation: wobble .5s infinite}
+.cz_sbi_fx_8a:hover .service_custom, .cz_sbi_fx_8a:hover .service_img {transform: translateZ(0);animation: flash .5s forwards}
+.cz_sbi_fx_8:hover .service_custom, .cz_sbi_fx_8:hover .service_img {transform: translateZ(0);animation: flash .5s infinite}
+.cz_sbi_fx_9a:hover .service_custom, .cz_sbi_fx_9a:hover .service_img {transform: translateZ(0);animation: bounceFX .6s forwards}
+.cz_sbi_fx_9:hover .service_custom, .cz_sbi_fx_9:hover .service_img {transform: translateZ(0);animation: bounceFX .6s infinite}
+.cz_sbi_fx_10 .service_custom, .cz_sbi_fx_11 .service_custom, 
+.cz_sbi_fx_10 .service_img, .cz_sbi_fx_11 .service_img {transition: all .4s ease}
+.cz_sbi_fx_10:hover .service_custom, .cz_sbi_fx_10:hover .service_img {transform:rotateY(360deg)}
+.cz_sbi_fx_11:hover .service_custom, .cz_sbi_fx_11:hover .service_img {transform:rotateX(360deg)}
+
+.services .xtra-placeholder {
+	max-width: 100px
+}
+
+@media screen and (max-width:480px) {
+
+	.services.left .service_custom,
+	.services.right .service_custom,
+	.services.left .service_img,
+	.services.right .service_img {
+		float:none !important;
+		margin:0 auto 20px auto !important;
+		display:table
+	}
+	.services div.service_text,
+	.services.right div.service_text {
+		padding:0 !important;
+		text-align:center !important
+	}
+	.cz_hexagon {
+		position: relative;
+		margin: 0 auto 30px
+	}
+
+}
