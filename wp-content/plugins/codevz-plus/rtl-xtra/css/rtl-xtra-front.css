@@ -295,7 +295,7 @@ This set of font are used in this project under the license: (KEFU3P)
 @font-face {
   font-family: 'Shabnam';
   font-weight: 700;
-  src: url('../fonts/general/Shabnam-Bold.eot?#') format('eot'),
+  src: url('../fonts/general/Shabnam.eot?#') format('eot'),
        url('../fonts/general/Shabnam-Bold.woff') format('woff');
 }
 @font-face {
@@ -652,7 +652,7 @@ This set of fonts are used in this project under the license: (USCDCN)
 	src: url('../fonts/persian_numbers/Anjoman/AnjomanFaNum-SemiBold.eot?#iefix') format('embedded-opentype'),
 		 url('../fonts/persian_numbers/Anjoman/AnjomanFaNum-SemiBold.woff') format('woff');
 }
-----------------------
+/*----------------------*/
 @font-face {
 	font-family: 'Anjoman_standard';
 	font-style: normal;
