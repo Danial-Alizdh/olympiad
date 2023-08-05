@@ -1,5 +1,6 @@
 // var url = 'http://127.0.0.1:8000/gyms_items/'
-let url = 'https://olympiad-server.onrender.com/gyms_items/'
+var url = 'https://olympiad-server.onrender.com/gyms_items/';
+
 fetch(url)
     .then(response => response.json())
     .then(data => {
