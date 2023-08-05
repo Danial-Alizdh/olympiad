@@ -1,7 +1,9 @@
-var url = 'http://127.0.0.1:8000/results_items/'
+// var url = 'http://127.0.0.1:8000/results_items/'
+let url = 'https://olympiad-server.onrender.com/results_items/'
 fetch(url)
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         appendResults(data);
     });
 function appendResults(data) {
@@ -32,7 +34,7 @@ function appendResults(data) {
         "</section>";
 
     let div_tag = "";
-    for (var i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         div_tag += "<section class=\"has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-d322779 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"d322779\" data-element_type=\"section\">\n" +
             "    <div class=\"elementor-container elementor-column-gap-default\">\n" +
             "        <div class=\"has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9c95992\" data-id=\"9c95992\" data-element_type=\"column\">\n" +
@@ -70,7 +72,7 @@ function generateTable(data) {
 
     for (let i = 0; i < data.table_titles.length; i++) {
         let title_tag = "";
-        if (data.table_title[i] !== "") {
+        if (data.table_titles[i] !== "") {
             title_tag = "<p><strong>" + data.table_titles[i]  + " :" + "</strong></p>";
         }
 

@@ -1,4 +1,5 @@
-var url = 'http://127.0.0.1:8000/dormitories_items/'
+// var url = 'http://127.0.0.1:8000/dormitories_items/'
+let url = 'https://olympiad-server.onrender.com/dormitories_items/'
 fetch(url)
     .then(response => response.json())
     .then(data => {
