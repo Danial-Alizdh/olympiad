@@ -6,6 +6,7 @@ fetch(url)
     });
 function appendResults(data) {
     const mainContainer = document.getElementById("results_items");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         const div_tag = document.createElement("div");
         const span_tag = document.createElement("span");

@@ -6,6 +6,7 @@ fetch(url)
     });
 function appendHomeNews(data) {
     let mainContainer = document.getElementById("home_news");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         let div_tag = document.createElement("div");
         let div2_tag = document.createElement("div");

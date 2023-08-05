@@ -7,6 +7,7 @@ fetch(url)
 
 function appendCompetitions(data) {
     let mainContainer = document.getElementById("timing_competitions_page");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         var section = ""
 

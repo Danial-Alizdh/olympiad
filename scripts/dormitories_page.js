@@ -7,6 +7,7 @@ fetch(url)
 
 function appendDormitories(data) {
     let mainContainer = document.getElementById("dormitories_page");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         var section = "<section\n" +
             "        class=\"has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-44e7da60 elementor-section-boxed elementor-section-height-default elementor-section-height-default\"\n" +

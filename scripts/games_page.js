@@ -6,6 +6,7 @@ fetch(url)
     });
 function appendGames(data) {
     let mainContainer = document.getElementById("games_page");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         const article_tag = document.createElement("article");
         const div_tag = document.createElement("div");

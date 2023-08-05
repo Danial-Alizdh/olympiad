@@ -6,6 +6,7 @@ fetch(url)
     });
 function appendNews(data) {
     let mainContainer = document.getElementById("news_page");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         let article_tag = document.createElement("article");
         let div_tag = document.createElement("div");

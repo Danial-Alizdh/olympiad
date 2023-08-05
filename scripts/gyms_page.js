@@ -7,6 +7,7 @@ fetch(url)
 
 function appendGyms(data) {
     let mainContainer = document.getElementById("gyms_page");
+    mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         var section = "<section\n" +
             "        class=\"has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-3c6fb14d elementor-section-boxed elementor-section-height-default elementor-section-height-default\"\n" +
