@@ -6,56 +6,91 @@ fetch(url)
     });
 function appendResults(data) {
     const mainContainer = document.getElementById("results_items");
-    mainContainer.innerHTML = "";
+    mainContainer.setAttribute("style", "");
+    mainContainer.innerHTML = "<section class=\"has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-1c68f0b elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"1c68f0b\" data-element_type=\"section\">\n" +
+        "    <div class=\"elementor-container elementor-column-gap-default\">\n" +
+        "        <div class=\"has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3cd7d50\" data-id=\"3cd7d50\" data-element_type=\"column\">\n" +
+        "            <div class=\"elementor-widget-wrap elementor-element-populated\">\n" +
+        "                <div class=\"elementor-element elementor-element-27600c0 elementor-widget elementor-widget-cz_title\" data-id=\"27600c0\" data-element_type=\"widget\" data-widget_type=\"cz_title.default\">\n" +
+        "                    <div class=\"elementor-widget-container\">\n" +
+        "                        <div>\n" +
+        "                            <div class=\"cz_title clr cz_title_pos_inline tac\">\n" +
+        "                                <div class=\"cz_title_content\">\n" +
+        "                                    <div class=\"cz_wpe_content\">\n" +
+        "                                        <p style=\"text-align: center;\">\n" +
+        "                                            نتایج زنده مسابقات چهارمین المپیاد استعدادهای برتر ورزشی\n" +
+        "                                        </p>\n" +
+        "                                    </div>\n" +
+        "                                </div>\n" +
+        "                            </div>\n" +
+        "                        </div>\n" +
+        "                    </div>\n" +
+        "                </div>\n" +
+        "            </div>\n" +
+        "        </div>\n" +
+        "    </div>\n" +
+        "</section>";
+
+    let div_tag = "";
     for (var i = 0; i < data.length; i++) {
-        const div_tag = document.createElement("div");
-        const span_tag = document.createElement("span");
-        const i_tag = document.createElement("i");
-        const div2_tag = document.createElement("div");
-        const div3_tag = document.createElement("div");
-
-        div_tag.setAttribute("class", "elementor-repeater-item-" + data[i].id);
-        span_tag.setAttribute("class", "cz_acc_child");
-        i_tag.setAttribute("class", "cz-acc-i cz-acc-icon fas " + data[i].game_icon);
-        div2_tag.innerHTML = data[i].game_name;
-
-        span_tag.appendChild(i_tag);
-        span_tag.appendChild(div2_tag);
-        div_tag.appendChild(span_tag);
-
-        div3_tag.setAttribute("class", "cz_acc_child_content clr");
-        for (var j = 0; j < data[i].table_title.length; j++) {
-            if (data[i].table_title[j] !== "") {
-                const p_tag = document.createElement("p");
-                const strong_tag = document.createElement("strong");
-                strong_tag.innerHTML = data[i].table_title[j] + " :"
-                p_tag.appendChild(strong_tag);
-                div3_tag.appendChild(p_tag);
-            }
-            generateTable(div3_tag, data[i].rows[j])
-        }
-        div_tag.appendChild(div3_tag);
-        mainContainer.appendChild(div_tag);
+        div_tag += "<section class=\"has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-d322779 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"d322779\" data-element_type=\"section\">\n" +
+            "    <div class=\"elementor-container elementor-column-gap-default\">\n" +
+            "        <div class=\"has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9c95992\" data-id=\"9c95992\" data-element_type=\"column\">\n" +
+            "            <div class=\"elementor-widget-wrap elementor-element-populated\">\n" +
+            "                <div class=\"elementor-element elementor-element-c289af1 elementor-widget elementor-widget-cz_accordion\" data-id=\"c289af1\" data-element_type=\"widget\" data-widget_type=\"cz_accordion.default\">\n" +
+            "                    <div class=\"elementor-widget-container\">\n" +
+            "                        <div data-arrows='{\"open\":\"fa czico-187-up-arrow-1\",\"close\":\"fa czico-194-download\"}' class=\"cz_acc clr cz_acc_toggle\">\n" +
+            "                            <div>\n" +
+            "                                <div class=\"elementor-repeater-item-" + data[i].id + "\">\n" +
+            "                                    <span class=\"cz_acc_child\">\n" +
+            "                                        <i class=\"cz-acc-i cz-acc-icon fas " + data[i].game_icon + "\"></i>\n" +
+            "                                        <div>\n" +
+                                                        data[i].game_name +
+            "                                        </div>\n" +
+            "                                    </span>\n" +
+            "                                    <div class=\"cz_acc_child_content clr\">\n" +
+                                                    generateTable(data[i]) +
+            "                                    </div>\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "</section>\n";
     }
+
+    mainContainer.innerHTML += div_tag;
 }
 
-function generateTable(div, rows) {
-    const tbl = document.createElement("table");
-    const tblBody = document.createElement("tbody");
+function generateTable(data) {
+    let table_tag = "";
 
-    for (let i = 0; i < rows.length; i++) {
-        const row = document.createElement("tr");
-
-        for (let j = 0; j < rows[i].length; j++) {
-            const cell = document.createElement("td");
-            const cellText = document.createTextNode(rows[i][j]);
-            cell.appendChild(cellText);
-            row.appendChild(cell);
+    for (let i = 0; i < data.table_titles.length; i++) {
+        let title_tag = "";
+        if (data.table_title[i] !== "") {
+            title_tag = "<p><strong>" + data.table_titles[i]  + " :" + "</strong></p>";
         }
 
-        tblBody.appendChild(row);
-    }
+        let tr_tag = "";
+        for (let j = 0; j < data.rows[i].length; j++) {
+            let td_tag = "";
+            for (let z = 0; z < data.rows[i][j].length; z++) {
+                td_tag += "<td>" + data.rows[i][j][z] + "</td>\n";
+            }
+            tr_tag += "<tr>\n" +
+                            td_tag +
+                "    </tr>";
+        }
 
-    tbl.appendChild(tblBody);
-    div.appendChild(tbl);
+        table_tag += title_tag +
+            "<table>\n" +
+            "    <tbody>\n" +
+                    tr_tag +
+            "    </tbody>\n" +
+            "</table>";
+    }
+    return table_tag;
 }
