@@ -4,7 +4,6 @@ var url = 'https://olympiad-server.onrender.com/results_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         appendResults(data);
     });
 function appendResults(data) {
