@@ -1,5 +1,5 @@
 // var url = 'http://127.0.0.1:8000/dormitories_items/'
-var url = 'https://olympiad-server.onrender.com/dormitories_items/';
+var url = API + 'dormitories_items/';
 
 fetch(url)
     .then(response => response.json())

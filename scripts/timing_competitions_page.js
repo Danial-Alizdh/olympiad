@@ -1,5 +1,5 @@
 // var url = 'http://127.0.0.1:8000/timing_competitions_items/'
-var url = 'https://olympiad-server.onrender.com/timing_competitions_items/';
+var url = API + 'timing_competitions_items/';
 
 fetch(url)
     .then(response => response.json())
