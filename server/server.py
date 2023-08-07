@@ -37,7 +37,7 @@ results_items = [
         "id": "a9cd979",
         "game_name": "آمادگی جسمانی",
         "game_icon": "fa-running",
-        "table_title": [""],
+        "table_titles": [""],
         "rows": [
             [
                 ["روز اول", "فردی", "فنی‌حرفه‌ای تبریز", "فرهنگیان مرکزی", "فنی‌حرفه‌ای تبریز"],
@@ -53,7 +53,7 @@ results_items = [
         "id": "aaf7693",
         "game_name": "دوچرخه‌سواری",
         "game_icon": "fa-bicycle",
-        "table_title": ["نتایج تیمی", "نتایج فردی"],
+        "table_titles": ["نتایج تیمی", "نتایج فردی"],
         "rows": [
             [
                 ["دانشگاه", "امتیاز اول", "امتیاز دوم", "مجموع", "مقام"], 
@@ -123,7 +123,43 @@ gyms_items = [
 
 timing_competitions_items = [
     {
-        
+        "id": "a9cd979",
+        "game_name": "آمادگی جسمانی",
+        "game_icon": "fa-running",
+        "pdf_titles": [],
+        "pdf_link": [],
+        "attention": "",
+        "description": "",
+        "bullets_titles": ["جمعه ۲۳ تیرماه (ساعت ۹ الی ۱۳:۳۰)", "شنبه ۲۴ تیرماه (ساعت ۹ الی ۱۳)"],
+        "bullets": [
+            ["دانشکده علوم و فنون", "خرمشهر", "فرهنگیان البرز", "فرهنگیان فارس"],
+            ["فرهنگیان مازندران", "فرهنگیان کهگلویه و بویراحمد", "فرهنگیان خراسان رضوی"]
+        ],
+        "coming": False
+    },
+    {
+        "id": "aaf7693",
+        "game_name": "دوچرخه سواری",
+        "game_icon": "fa-bicycle",
+        "pdf_titles": ["دانلود استارت لیست"],
+        "pdf_link": ["https://olympiadaraku.ir/wp-content/uploads/2023/07/%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1%D8%AA-%D9%84%DB%8C%D8%B3%D8%AA-%D9%BE%D8%B3%D8%B1%D8%A7%D9%86.pdf"],
+        "attention": "توجه : تایم های استارت روز ۲۴ تیر از ساعت ۱۷ به دلیل گرمای هوا به ساعت ۱۸ تغییر کرد.",
+        "description": "سکوی انفرادی دوچرخه سواری راس ساعت ۱۰ در محل دانشکده علوم ورزشی برگزار خواهد شد.",
+        "bullet_titles": [],
+        "bullets": [],
+        "coming": False
+    },
+    {
+        "id": "7b99837",
+        "game_name": "فریزبی",
+        "game_icon": "fa-circle",
+        "pdf_titles": [],
+        "pdf_link": [],
+        "attention": "",
+        "description": "",
+        "bullet_titles": [],
+        "bullets": [],
+        "coming": True
     },
 ]
 
