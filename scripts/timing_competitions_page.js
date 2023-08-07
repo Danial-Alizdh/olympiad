@@ -4,7 +4,9 @@ var url = API + 'timing_competitions_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendCompetitions(data);
+        if (data.length > 0) {
+            appendCompetitions(data);
+        }
     });
 
 function appendCompetitions(data) {

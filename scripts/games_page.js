@@ -4,7 +4,9 @@ var url = API + 'games_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendGames(data);
+        if (data.length > 0) {
+            appendGames(data);
+        }
     });
 function appendGames(data) {
     let mainContainer = document.getElementById("games_page");

@@ -4,7 +4,9 @@ var url = API + 'dormitories_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendDormitories(data);
+        if (data.length > 0) {
+            appendDormitories(data);
+        }
     });
 
 function appendDormitories(data) {

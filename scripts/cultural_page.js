@@ -4,7 +4,9 @@ var url = API + 'cultural_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendNews(data);
+        if (data.length > 0) {
+            appendNews(data);
+        }
     });
 function appendNews(data) {
     let mainContainer = document.getElementById("cultural_page");

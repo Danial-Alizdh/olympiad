@@ -4,7 +4,9 @@ var url = API + 'gyms_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendGyms(data);
+        if (data.length > 0) {
+            appendGyms(data);
+        }
     });
 
 function appendGyms(data) {

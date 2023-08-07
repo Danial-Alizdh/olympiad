@@ -4,7 +4,9 @@ var url = API + 'results_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendResults(data);
+        if (data.length > 0) {
+            appendResults(data);
+        }
     });
 function appendResults(data) {
     const mainContainer = document.getElementById("results_items");

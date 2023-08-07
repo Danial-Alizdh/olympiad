@@ -4,7 +4,9 @@ var url = API + 'news_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        appendHomeNews(data);
+        if (data.length > 0) {
+            appendHomeNews(data);
+        }
     });
 function appendHomeNews(data) {
     let mainContainer = document.getElementById("home_news");
