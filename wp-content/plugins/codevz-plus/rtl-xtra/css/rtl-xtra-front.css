@@ -1371,23 +1371,23 @@ This set of fonts are used in this project under the license: (BDB7QA)
 		 url('../fonts/standard/Peyda/woff2/PeydaWeb-Thin.woff2') format('woff2');
 }
 
-@font-face {
-	font-family:'Peyda';
-	font-weight:200;
-	src: url('../fonts/standard/Peyda/eot/PeydaWeb-extralight.eot');
-	src: url('../fonts/standard/Peyda/eot/PeydaWeb-extralight.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/standard/Peyda/woff/PeydaWeb-extralight.woff') format('woff'),
-		 url('../fonts/standard/Peyda/woff2/PeydaWeb-extralight.woff2') format('woff2');
-}
+/*@font-face {*/
+/*	font-family:'Peyda';*/
+/*	font-weight:200;*/
+/*	src: url('../fonts/standard/Peyda/eot/PeydaWeb-extralight.eot');*/
+/*	src: url('../fonts/standard/Peyda/eot/PeydaWeb-extralight.eot?#iefix') format('embedded-opentype'),*/
+/*		 url('../fonts/standard/Peyda/woff/PeydaWeb-extralight.woff') format('woff'),*/
+/*		 url('../fonts/standard/Peyda/woff2/PeydaWeb-extralight.woff2') format('woff2');*/
+/*}*/
 
-@font-face {
-	font-family:'Peyda';
-	font-weight:300;
-	src: url('../fonts/standard/Peyda/eot/PeydaWeb-light.eot');
-	src: url('../fonts/standard/Peyda/eot/PeydaWeb-light.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/standard/Peyda/woff/PeydaWeb-light.woff') format('woff'),
-		 url('../fonts/standard/Peyda/woff2/PeydaWeb-light.woff2') format('woff2');
-}
+/*@font-face {*/
+/*	font-family:'Peyda';*/
+/*	font-weight:300;*/
+/*	src: url('../fonts/standard/Peyda/eot/PeydaWeb-light.eot');*/
+/*	src: url('../fonts/standard/Peyda/eot/PeydaWeb-light.eot?#iefix') format('embedded-opentype'),*/
+/*		 url('../fonts/standard/Peyda/woff/PeydaWeb-light.woff') format('woff'),*/
+/*		 url('../fonts/standard/Peyda/woff2/PeydaWeb-light.woff2') format('woff2');*/
+/*}*/
 
 @font-face {
 	font-family:'Peyda';
