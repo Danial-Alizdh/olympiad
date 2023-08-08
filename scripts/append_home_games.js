@@ -22,7 +22,7 @@ function appendHomeGames(data) {
         li_tag.setAttribute("class", "elementor-repeater-item-9aa4d5c clr");
         a_tag.setAttribute("href", "./games/");
         div_tag.setAttribute("class", "cz_sl_icon");
-        i_tag.setAttribute("class", "mr10 fas " + data[i].icon);
+        i_tag.setAttribute("class", "mr10 " + data[i].icon);
         span_tag.innerHTML = data[i].name;
 
         div_tag.appendChild(i_tag);
