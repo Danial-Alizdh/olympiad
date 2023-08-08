@@ -30,7 +30,7 @@ function appendNews(data) {
         a_tag.setAttribute("href", data[i].link);
         img_tag.setAttribute("decoding", "async");
         img_tag.setAttribute("src", "data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;360&#39;%20height=&#39;320&#39;%20viewBox%3D&#39;0%200%20360%20320&#39;%2F%3E");
-        img_tag.setAttribute("data-src", data[i].img_src);
+        img_tag.setAttribute("data-src", "." + data[i].img_src);
         img_tag.setAttribute("title", data[i].img_title);
         img_tag.setAttribute("alt", data[i].img_title);
         img_tag.setAttribute("loading", "lazy");
