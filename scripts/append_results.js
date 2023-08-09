@@ -1,11 +1,10 @@
-// var url = 'http://127.0.0.1:8000/results_items/'
 var url = API + 'results_items/';
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data.length > 0) {
-            appendResults(data);
+        if (data['data'].length > 0) {
+            appendResults(data['data']);
         }
     });
 function appendResults(data) {
@@ -45,11 +44,11 @@ function appendResults(data) {
             "                    <div class=\"elementor-widget-container\">\n" +
             "                        <div data-arrows='{\"open\":\"fa czico-187-up-arrow-1\",\"close\":\"fa czico-194-download\"}' class=\"cz_acc clr cz_acc_toggle\">\n" +
             "                            <div>\n" +
-            "                                <div class=\"elementor-repeater-item-" + data[i].id + "\">\n" +
+            "                                <div class=\"elementor-repeater-item-" + "\">\n" +
             "                                    <span class=\"cz_acc_child\">\n" +
-            "                                        <i class=\"cz-acc-i cz-acc-icon fas " + data[i].game_icon + "\"></i>\n" +
+            "                                        <i class=\"cz-acc-i cz-acc-icon fas " + icons[data[i].name] + "\"></i>\n" +
             "                                        <div>\n" +
-                                                        data[i].game_name +
+                                                        data[i].name +
             "                                        </div>\n" +
             "                                    </span>\n" +
             "                                    <div class=\"cz_acc_child_content clr\">\n" +

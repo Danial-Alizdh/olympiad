@@ -1,17 +1,17 @@
-// var url = 'http://127.0.0.1:8000/games_items/'
 var url = API + 'games_items/';
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data.length > 0) {
-            appendGames(data);
+        if (data['data'].length > 0) {
+            appendGames(data['data']);
         }
     });
 function appendGames(data) {
     let mainContainer = document.getElementById("games_page");
     mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
+        data[i] = data[i]['attributes'];
         const article_tag = document.createElement("article");
         const div_tag = document.createElement("div");
         const a_tag = document.createElement("a");
@@ -28,7 +28,7 @@ function appendGames(data) {
         img_tag.setAttribute("width", "360");
         img_tag.setAttribute("height", "320");
         img_tag.setAttribute("src", "data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;360&#39;%20height=&#39;320&#39;%20viewBox%3D&#39;0%200%20360%20320&#39;%2F%3E");
-        img_tag.setAttribute("data-src", data[i].img_src);
+        img_tag.setAttribute("data-src", data[i].image);
         img_tag.setAttribute("class", "attachment-codevz_360_320 size-codevz_360_320 wp-post-image");
         img_tag.setAttribute("alt", "");
         img_tag.setAttribute("decoding", "async");

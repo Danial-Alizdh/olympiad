@@ -1,11 +1,10 @@
-// var url = 'http://127.0.0.1:8000/timing_competitions_items/'
 var url = API + 'timing_competitions_items/';
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data.length > 0) {
-            appendCompetitions(data);
+        if (data['data'].length > 0) {
+            appendCompetitions(data['data']);
         }
     });
 
@@ -108,7 +107,7 @@ function appendCompetitions(data) {
     //         "                            <div>\n" +
     //         "                                <div class=\"elementor-repeater-item-" + data[i].id + "\">\n" +
     //         "                                    <span class=\"cz_acc_child\">\n" +
-    //         "                                        <i class=\"cz-acc-i cz-acc-icon fas " + data[i].game_icon + "\"></i>\n" +
+    //         "                                        <i class=\"cz-acc-i cz-acc-icon fas " + icons[data[i].name] + "\"></i>\n" +
     //         "                                        <div>" + data[i].game_name + "</div>\n" +
     //         "                                    </span>\n" +
     //                                                 div_tag +

@@ -1,11 +1,10 @@
-// var url = 'http://127.0.0.1:8000/gyms_items/'
 var url = API + 'gyms_items/';
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data.length > 0) {
-            appendGyms(data);
+        if (data['data'].length > 0) {
+            appendGyms(data['data']);
         }
     });
 
@@ -13,6 +12,7 @@ function appendGyms(data) {
     let mainContainer = document.getElementById("gyms_page");
     mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
+        data[i] = data[i]['attributes'];
         var section = "<section\n" +
             "        class=\"has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-3c6fb14d elementor-section-boxed elementor-section-height-default elementor-section-height-default\"\n" +
             "        data-id=\"3c6fb14d\" data-element_type=\"section\">\n" +
@@ -51,7 +51,7 @@ function appendGyms(data) {
             "                        <img decoding=\"async\"\n" +
             "                             src=\"data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;_w_&#39;%20height=&#39;_h_&#39;%20viewBox%3D&#39;0%200%20_w_%20_h_&#39;%2F%3E\"\n" +
             "                             data-czlz\n" +
-            "                             data-src=" + data[i].img_src + "\n" +
+            "                             data-src=" + data[i].image + "\n" +
             "                             title=\"IMG_2627-scaled-1\" alt=\"IMG_2627-scaled-1\"\n" +
             "                             loading=\"lazy\"/>\n" +
             "                    </div>\n" +
