@@ -3,7 +3,7 @@ var url = API + 'timing_competitions_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data['data'].length > 0) {
+        if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
             appendCompetitions(data['data']);
         }
     });
