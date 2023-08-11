@@ -10,7 +10,7 @@ fetch(url)
 function appendNews(data) {
     let mainContainer = document.getElementById("news_page");
     mainContainer.innerHTML = "";
-    for (var i = 0; i < data.length; i++) {
+    for (var i = data.length-1; i > 0; i--) {
         data[i] = data[i]['attributes'];
         let article_tag = document.createElement("article");
         let div_tag = document.createElement("div");

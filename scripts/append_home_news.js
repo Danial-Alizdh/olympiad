@@ -7,10 +7,11 @@ fetch(url)
             appendHomeNews(data['data']);
         }
     });
+
 function appendHomeNews(data) {
     let mainContainer = document.getElementById("home_news");
     mainContainer.innerHTML = "";
-    for (var i = 0; i < data.length; i++) {
+    for (var i = data.length-1; i > 0; i--) {
         data[i] = data[i]['attributes'];
         let div_tag = document.createElement("div");
         let div2_tag = document.createElement("div");
@@ -29,7 +30,7 @@ function appendHomeNews(data) {
         div_tag.setAttribute("style", "position: absolute; right: 0%; top: 0px;");
         div2_tag.setAttribute("class", "clr");
         a_tag.setAttribute("class", "cz_grid_link cz_grid_zoom_in");
-        a_tag.setAttribute("href", "");
+        a_tag.setAttribute("href", "./news/");
         a_tag.setAttribute("title", data[i].title);
         img_tag.setAttribute("decoding", "async");
         img_tag.setAttribute("src", "data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;_w_&#39;%20height=&#39;_h_&#39;%20viewBox%3D&#39;0%200%20_w_%20_h_&#39;%2F%3E");
