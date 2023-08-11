@@ -138,10 +138,35 @@ function appendCompetitions(data) {
                 for (let z = 0; z < dates[j][1].length; z++) {
                     ul += "<li>" + dates[j][1][z] + "</li>\n";
                 }
-                bullet += "<h4>" + dates[j][0] + " (ساعت " + data[i].start_time + "  الی  " + data[i].end_time + ")" + "</h4>\n" +
-                    "                                        <ul>\n" +
-                    ul +
-                    "                                        </ul>";
+                if (data[i].start_time !== null && data[i].end_time !== null) {
+                    bullet += "<h4>" + dates[j][0] + " (ساعت " + data[i].start_time + "  الی  " + data[i].end_time + ")" + "</h4>\n" +
+                        "                                        <ul>\n" +
+                        ul +
+                        "                                        </ul>";
+                }
+                else
+                {
+                    if (data[i].start_time !== null){
+                        bullet += "<h4>" + dates[j][0] + " (ساعت " + data[i].start_time + ")" + "</h4>\n" +
+                            "                                        <ul>\n" +
+                            ul +
+                            "                                        </ul>";
+                    }
+
+                    else if (data[i].end_time !== null) {
+                        bullet += "<h4>" + dates[j][0] + " (ساعت " + data[i].end_time + ")" + "</h4>\n" +
+                            "                                        <ul>\n" +
+                            ul +
+                            "                                        </ul>";
+                    }
+
+                    else {
+                        bullet += "<h4>" + dates[j][0] + "</h4>\n" +
+                            "                                        <ul>\n" +
+                            ul +
+                            "                                        </ul>";
+                    }
+                }
             }
             div_tag = "<div class=\"cz_acc_child_content clr\">\n" +
                 bullet +
