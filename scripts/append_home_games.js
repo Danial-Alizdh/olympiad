@@ -1,12 +1,111 @@
-var url = API + 'games_items/';
+// var url = API + 'games_items/';
+//
+// fetch(url)
+//     .then(response => response.json())
+//     .then(data => {
+//         if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
+//             appendHomeGames(data['data']);
+//         }
+//     });
 
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
-            appendHomeGames(data['data']);
+data = {
+    "data": [
+        {
+            "type": "Game",
+            "id": "1",
+            "attributes": {
+                "name": "واترپلو",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/waterpolo.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "2",
+            "attributes": {
+                "name": "اسکیت",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%A7%D8%B3%DA%A9%DB%8C%D8%AA.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "3",
+            "attributes": {
+                "name": "شیرجه",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%B4%DB%8C%D8%B1%D8%AC%D9%87.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "4",
+            "attributes": {
+                "name": "تنیس روی میز",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%AA%D9%86%DB%8C%D8%B3_%D8%B1%D9%88%DB%8C_%D9%85%DB%8C%D8%B2.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "5",
+            "attributes": {
+                "name": "تیراندازی",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "6",
+            "attributes": {
+                "name": "جودو",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%AC%D9%88%D8%AF%D9%88.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "7",
+            "attributes": {
+                "name": "دوومیدانی",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%AF%D9%88%D9%88%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "8",
+            "attributes": {
+                "name": "شنا",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D8%B4%D9%86%D8%A7.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "9",
+            "attributes": {
+                "name": "قایقرانی",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%D9%82%D8%A7%DB%8C%D9%82%D8%B1%D8%A7%D9%86%DB%8C.jpg"
+            }
+        },
+        {
+            "type": "Game",
+            "id": "10",
+            "attributes": {
+                "name": "گلف",
+                "description": null,
+                "image": "http://79.127.120.164:2699/uploads/%DA%AF%D9%84%D9%81.jpg"
+            }
         }
-    });
+    ]
+};
+
+appendHomeGames(data['data']);
+
+
 function appendHomeGames(data) {
     let mainContainer = document.getElementById("home_games");
     mainContainer.innerHTML = "";

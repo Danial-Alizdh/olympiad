@@ -5,7 +5,7 @@ const icons = {
     "اسکیت": "fa fa-skating",
     "شیرجه": "",
     "شنا": "fa fa-swimmer",
-    "دو و میدانی": "fa fa-running",
+    "دوومیدانی": "fa fa-running",
     "تیراندازی": "czi czico-052-target",
     "تنیس روی میز": "fa fa-circle",
     "جودو": "fa fa-child",
