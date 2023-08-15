@@ -23,7 +23,7 @@
 
 .elementor-907 .elementor-element.elementor-element-77d3118:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-907 .elementor-element.elementor-element-77d3118 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-color: transparent;
-    background-image: linear-gradient(90deg, #c37fbb 0%, #963e84 100%);
+    background-image: linear-gradient(90deg, #e5dc75 0%, #50bcd2 100%);
 }
 
 .elementor-907 .elementor-element.elementor-element-77d3118 > .elementor-element-populated, .elementor-907 .elementor-element.elementor-element-77d3118 > .elementor-element-populated > .elementor-background-overlay, .elementor-907 .elementor-element.elementor-element-77d3118 > .elementor-background-slideshow {
@@ -191,7 +191,7 @@
 }
 
 .elementor-907 .elementor-element.elementor-element-3072491 .cz_title .cz_title_line span, .elementor-907 .elementor-element.elementor-element-3072491 .cz_title .cz_line_side_solo {
-    background-color: #6b35a1;
+    background-color: #2e6798;
     top: 0px;
 }
 
@@ -203,7 +203,7 @@
     color: #ffffff;
     font-weight: 700;
     background-color: transparent;
-    background-image: linear-gradient(90deg, #c37fbb, #e095d0);
+    background-image: linear-gradient(90deg, #e5dc75, #6BCADE);
     border-style: solid;
     border-radius: 5px;
 }
@@ -277,7 +277,7 @@
     font-size: 25px;
     color: #ffffff;
     background-color: transparent;
-    background-image: linear-gradient(90deg, #c37fbb, #e095d0);
+    background-image: linear-gradient(90deg, #FFF68F, #6BCADE);
     margin-right: 0px;
     margin-left: 15px;
     border-style: none;
@@ -433,7 +433,7 @@
 .elementor-907 .elementor-element.elementor-element-821a3ef > .elementor-element-populated {
     border-style: solid;
     border-width: 10px 10px 10px 10px;
-    border-color: #804a9d;
+    border-color: #2e6798;
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     margin: 50px 10px 50px 10px;
     --e-column-margin-right: 10px;
@@ -469,7 +469,7 @@
 }
 
 .elementor-907 .elementor-element.elementor-element-0c32b24 .cz_title .cz_title_line span, .elementor-907 .elementor-element.elementor-element-0c32b24 .cz_title .cz_line_side_solo {
-    background-color: #6b35a1;
+    background-color: #2e6798;
     top: 0px;
 }
 
