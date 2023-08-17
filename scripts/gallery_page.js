@@ -1,4 +1,4 @@
-var url = API + 'cultural_items/';
+var url = API + 'gallery_items/';
 
 fetch(url)
     .then(response => response.json())
@@ -8,13 +8,12 @@ fetch(url)
         }
     });
 function appendNews(data) {
-    let mainContainer = document.getElementById("cultural_page");
+    let mainContainer = document.getElementById("gallery_page");
     mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         let article_tag = document.createElement("article");
         let div_tag = document.createElement("div");
         let div2_tag = document.createElement("div");
-        let div3_tag = document.createElement("div");
         let a_tag = document.createElement("a");
         let a2_tag = document.createElement("a");
         let a3_tag = document.createElement("a");
@@ -45,15 +44,11 @@ function appendNews(data) {
         span_tag.setAttribute("class", "cz_post_inner_meta cz_post_meta mt10 mb10 cz_post_date");
         a3_tag.innerHTML = data[i].date;
 
-        div3_tag.setAttribute("class", "cz_post_excerpt");
-        div3_tag.innerHTML = data[i].description;
-
         span_tag.appendChild(a3_tag);
         a2_tag.appendChild(h3_tag);
 
         div2_tag.appendChild(a2_tag);
         div2_tag.appendChild(span_tag);
-        div2_tag.appendChild(div3_tag);
 
         a_tag.appendChild(img_tag);
         div_tag.appendChild(a_tag);
