@@ -3,14 +3,15 @@ var url = API + 'cultural_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data.length > 0) {
-            appendNews(data);
+        if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
+            appendCultural(data['data']);
         }
     });
-function appendNews(data) {
+function appendCultural(data) {
     let mainContainer = document.getElementById("cultural_page");
     mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
+        data[i] = data[i]['attributes'];
         let article_tag = document.createElement("article");
         let div_tag = document.createElement("div");
         let div2_tag = document.createElement("div");

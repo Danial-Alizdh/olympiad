@@ -3,23 +3,22 @@ var url = API + 'gallery_items/';
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        if (data.length > 0) {
-            appendNews(data);
+        if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
+            appendGallery(data['data']);
         }
     });
-function appendNews(data) {
+function appendGallery(data) {
     let mainContainer = document.getElementById("gallery_page");
     mainContainer.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
+        data[i] = data[i]['attributes'];
         let article_tag = document.createElement("article");
         let div_tag = document.createElement("div");
         let div2_tag = document.createElement("div");
         let a_tag = document.createElement("a");
         let a2_tag = document.createElement("a");
-        let a3_tag = document.createElement("a");
         let img_tag = document.createElement("img");
         let h3_tag = document.createElement("h3");
-        let span_tag = document.createElement("span");
 
         article_tag.setAttribute("class", "cz_default_loop clr cz_post_odd post-5180 post type-post status-publish format-standard has-post-thumbnail hentry category-sixth");
         div_tag.setAttribute("class", "clr");
@@ -38,17 +37,11 @@ function appendNews(data) {
 
         div2_tag.setAttribute("class", "cz_post_con");
         a2_tag.setAttribute("class", "cz_post_title");
-        // a2_tag.setAttribute("href", data[i].link);
         h3_tag.innerHTML = data[i].title;
 
-        span_tag.setAttribute("class", "cz_post_inner_meta cz_post_meta mt10 mb10 cz_post_date");
-        a3_tag.innerHTML = data[i].date;
-
-        span_tag.appendChild(a3_tag);
         a2_tag.appendChild(h3_tag);
 
         div2_tag.appendChild(a2_tag);
-        div2_tag.appendChild(span_tag);
 
         a_tag.appendChild(img_tag);
         div_tag.appendChild(a_tag);

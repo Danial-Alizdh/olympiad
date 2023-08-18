@@ -2,6 +2,8 @@
 <html dir="rtl" lang="fa-IR">
 <head>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
@@ -1908,14 +1910,29 @@
                     })
                         .then(function(response) {
                             if (response.ok) {
-                                alert("درخواست شما با موفقیت ثبت شد");
-                                location.reload();
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'درخواست شما با موفقیت ثبت شد',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                }).then(function() {
+                                    // Reload the page
+                                    location.reload();
+                                });
                             } else {
-                                alert("مشکلی رخ داده است، لطفا مجددا تلاش فرمایید.");
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'مشکلی رخ داده است',
+                                    text: 'لطفا مجددا تلاش فرمایید.',
+                                });
                             }
                         })
                         .catch(function(error) {
-                            alert("مشکلی رخ داده است، لطفا مجددا تلاش فرمایید.");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'مشکلی رخ داده است',
+                                text: 'لطفا مجددا تلاش فرمایید.',
+                            });
                         });
                 });
             });
