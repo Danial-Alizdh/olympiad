@@ -1,29 +1,12 @@
-// var url = API + 'dormitories_items/';
-//
-// fetch(url)
-//     .then(response => response.json())
-//     .then(data => {
-//         if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
-//             appendDormitories(data['data']);
-//         }
-//     });
+var url = API + 'dormitories_items/';
 
-data = {
-    "data": [
-        {
-            "type": "Dormitories",
-            "id": "1",
-            "attributes": {
-                "name": "خوابگاه آزادی (فیضی)",
-                "description": null,
-                "direction_link": "https://maps.app.goo.gl/wGRUaArrnT7UYjZK8",
-                "image": "http://79.127.120.164:2699/uploads/photo6261799216.jpg"
-            }
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
+            appendDormitories(data['data']);
         }
-    ]
-}
-
-appendDormitories(data['data']);
+    });
 
 function appendDormitories(data) {
     let mainContainer = document.getElementById("dormitories_page");
