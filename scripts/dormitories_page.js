@@ -1,12 +1,29 @@
-var url = API + 'dormitories_items/';
+// var url = API + 'dormitories_items/';
+//
+// fetch(url)
+//     .then(response => response.json())
+//     .then(data => {
+//         if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
+//             appendDormitories(data['data']);
+//         }
+//     });
 
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        if ((typeof data['data'] !== 'undefined') && (data['data'].length > 0)) {
-            appendDormitories(data['data']);
+data = {
+    "data": [
+        {
+            "type": "Dormitories",
+            "id": "1",
+            "attributes": {
+                "name": "خوابگاه آزادی (فیضی)",
+                "description": null,
+                "direction_link": "https://maps.app.goo.gl/wGRUaArrnT7UYjZK8",
+                "image": "http://79.127.120.164:2699/uploads/photo6261799216.jpg"
+            }
         }
-    });
+    ]
+}
+
+appendDormitories(data['data']);
 
 function appendDormitories(data) {
     let mainContainer = document.getElementById("dormitories_page");
@@ -71,7 +88,7 @@ function appendDormitories(data) {
             "                                <div class=\"cz_title_content\">\n" +
             "                                    <div class=\"cz_wpe_content\">\n" +
             "                                        <p style=\"text-align: justify;\">\n" +
-                                                        data[i].description +
+                                                        (data[i].description == null ? data[i].name : data[i].description) +
             "                                        </p>\n" +
             "                                    </div>\n" +
             "                                </div>\n" +
