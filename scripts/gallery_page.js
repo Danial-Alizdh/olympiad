@@ -87,7 +87,5 @@ function appendGallery(data) {
             "        </div>\n" +
             "    </div>\n" +
             "</section>";
-
-
     }
 }
