@@ -81,7 +81,7 @@ function appendCompetitions(data) {
         "                            <div class=\"cz_title clr cz_title_pos_inline tac\">\n" +
         "                                <div class=\"cz_title_content\">\n" +
         "                                    <div class=\"cz_wpe_content\">\n" +
-        "                                        <p style=\"text-align: center;\">برنامه دقیق مسابقات چهارمین المپیاد ورزش های همگانی</p>\n" +
+        "                                        <p style=\"text-align: center;\">برنامه دقیق مسابقات چهارمین المپیاد استعدادهای برتر ورزش کشور</p>\n" +
         "                                    </div>\n" +
         "                                </div>\n" +
         "                            </div>\n" +
