@@ -70,7 +70,7 @@ function appendGyms(data) {
             "                                <div class=\"cz_title_content\">\n" +
             "                                    <div class=\"cz_wpe_content\">\n" +
             "                                        <p style=\"text-align: justify;\">\n" +
-                                                        data[i].description +
+            (data[i].description == null ? data[i].name : data[i].description) +
             "                                        </p>\n" +
             "                                    </div>\n" +
             "                                </div>\n" +
@@ -96,17 +96,19 @@ function appendGyms(data) {
             "                                    <div class=\"elementor-widget-container\">\n" +
             "                                        <div class=\"cz_btn_block\">\n" +
             "                                            <div>\n" +
-            "                                                <a href=" + data[i].direction_link +"\n" +
+            "                                                <a\n" +
+            "                                                   target=\"_blank\"\n" +
             "                                                   class=\"cz_btn cz_btn_txt_no_fx cz_btn_no_fx\">\n" +
             "                                                    <span>\n" +
-            "                                                        <i class=\"fas fa-location-arrow\"></i>\n" +
-            "                                                        <strong>مسیر یابی</strong>\n" +
+            "                                                        <i class=\"fas fa-copy\"></i>\n" +
+            "                                                        <strong onclick=\"copyToClipboard()\">کپی کردن مسیر</strong>\n" +
             "                                                    </span>\n" +
             "                                                    <b class=\"cz_btn_onhover\">\n" +
             "                                                        <i class=\"fas fa-location-arrow\"></i>\n" +
-            "                                                        <strong>مسیر یابی </strong>\n" +
+            "                                                        <strong onclick=\"copyToClipboard()\">کپی کردن مسیر</strong>\n" +
             "                                                    </b>\n" +
             "                                                </a>\n" +
+            "<a id=\"myLink\" style=\"visibility: hidden\" href=" + data[i].direction_link + "</a>\n" +
             "                                            </div>\n" +
             "                                        </div>\n" +
             "                                    </div>\n" +
@@ -145,4 +147,25 @@ function appendGyms(data) {
         mainContainer.innerHTML += section
         mainContainer.innerHTML += separator
     }
+}
+
+function copyToClipboard() {
+    var link = document.getElementById("myLink");
+
+    var tempInput = document.createElement("input");
+    tempInput.value = link.href;
+    document.body.appendChild(tempInput);
+
+    tempInput.select();
+
+    document.execCommand("copy");
+
+    document.body.removeChild(tempInput);
+
+    Swal.fire({
+        icon: 'success',
+        title: 'در کلیپ‌بورد کپی شد',
+        showConfirmButton: false,
+        timer: 1500
+    })
 }
