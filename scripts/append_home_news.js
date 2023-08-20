@@ -33,10 +33,11 @@ function appendHomeNews(data) {
         a_tag.setAttribute("href", (data[i].link === null ? "#" : data[i].link));
         a_tag.setAttribute("title", data[i].title);
         img_tag.setAttribute("decoding", "async");
-        img_tag.setAttribute("src", "data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;_w_&#39;%20height=&#39;_h_&#39;%20viewBox%3D&#39;0%200%20_w_%20_h_&#39;%2F%3E");
-        img_tag.setAttribute("data-src", data[i].image);
-        img_tag.setAttribute("title", "");
-        img_tag.setAttribute("alt", "");
+        // img_tag.setAttribute("src", "data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20width=&#39;_w_&#39;%20height=&#39;_h_&#39;%20viewBox%3D&#39;0%200%20_w_%20_h_&#39;%2F%3E");
+        // img_tag.setAttribute("data-src", data[i].image);
+        img_tag.setAttribute("src", data[i].image);
+        // img_tag.setAttribute("title", "");
+        // img_tag.setAttribute("alt", "");
         img_tag.setAttribute("loading", "lazy");
         div3_tag.setAttribute("class", "cz_grid_details");
         i_tag.setAttribute("class", "fa czico-109-link-symbol-1 cz_grid_icon");
