@@ -1,3 +1,5 @@
+const AUTH_API = 'http://127.0.0.1:8000/auth';
+
 async function updateUI() {
     const signinButton = document.querySelector('.signin-button');
     const signupButton = document.querySelector('.signup-button');
@@ -6,7 +8,7 @@ async function updateUI() {
     try {
         let formData = new FormData();
         formData.append('login_token', localStorage.getItem('login_token'));
-        let response = await fetch("http://127.0.0.1:8000/auth/main_page/", {
+        let response = await fetch(AUTH_API + "/main_page/", {
             method: 'POST',
             body: formData,
         });

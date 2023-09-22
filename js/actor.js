@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let formData = new FormData();
             formData.append('login_token', localStorage.getItem('login_token'));
             formData.append('role', 'actor');
-            let response = await fetch("http://127.0.0.1:8000/auth/get_users_by_role/", {
+            let response = await fetch(AUTH_API + "/get_users_by_role/", {
                 method: 'POST',
                 body: formData,
             });
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         actorDiv.classList.add('actor');
 
         const img = document.createElement('img');
-        img.src = actor.image_profile === null ? '../images/no_pic.png' : ('http://127.0.0.1:8000/auth' + actor.image_profile);
+        img.src = actor.image_profile === null ? '../images/no_pic.png' : (AUTH_API + actor.image_profile);
         img.alt = `Actor ${actor.username}`;
 
         const h2 = document.createElement('h2');
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   //                               formData.append('login_token', localStorage.getItem('login_token'));
   //                               formData.append('user_email', actor.email);
   //                               formData.append('rate', rate);
-  //                               let response = await fetch("http://127.0.0.1:8000/auth/change_rate/", {
+  //                               let response = await fetch(AUTH_API + "/change_rate/", {
   //                                   method: 'POST',
   //                                   body: formData,
   //                               });

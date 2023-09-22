@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            let response = await fetch("http://127.0.0.1:8000/auth/signup/", {
+            let response = await fetch(AUTH_API + "/signup/", {
                 method: "POST",
                 body: formData,
             });

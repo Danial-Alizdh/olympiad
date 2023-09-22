@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let formData = new FormData();
             formData.append('login_token', localStorage.getItem('login_token'));
             formData.append('role', 'coach');
-            let response = await fetch("http://127.0.0.1:8000/auth/get_users_by_role/", {
+            let response = await fetch(AUTH_API + "/get_users_by_role/", {
                 method: 'POST',
                 body: formData,
             });
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         coachDiv.classList.add('coach');
 
         const img = document.createElement('img');
-        img.src = coach.image_profile === null ? '../images/no_pic.png' : ('http://127.0.0.1:8000/auth' + coach.image_profile);
+        img.src = coach.image_profile === null ? '../images/no_pic.png' : (AUTH_API + coach.image_profile);
         img.alt = `Coach ${coach.username}`;
 
         const h2 = document.createElement('h2');
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 formData.append('login_token', localStorage.getItem('login_token'));
                                 formData.append('user_email', coach.email);
                                 formData.append('rate', rate);
-                                let response = await fetch("http://127.0.0.1:8000/auth/change_rate/", {
+                                let response = await fetch(AUTH_API + "/change_rate/", {
                                     method: 'POST',
                                     body: formData,
                                 });

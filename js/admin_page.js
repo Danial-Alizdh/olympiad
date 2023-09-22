@@ -40,7 +40,7 @@ function displayUsers(users) {
 
         // Create an image element for the user's profile picture
         const profileImage = document.createElement("img");
-        profileImage.src = user.image_profile === null ? '../images/no_pic.png' : ('http://127.0.0.1:8000/auth' + user.image_profile);
+        profileImage.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile);
         profileImage.alt = `User ${index + 1} Avatar`;
         userAvatarDiv.appendChild(profileImage);
 
@@ -74,7 +74,7 @@ function displayUsers(users) {
 
         // Create an image element for the user's license picture
         const licenseImage = document.createElement("img");
-        licenseImage.src = user.document_image === null ? '../images/no_image.jpg' : ('http://127.0.0.1:8000/auth' + user.document_image);
+        licenseImage.src = user.document_image === null ? '../images/no_image.jpg' : (AUTH_API + user.document_image);
         licenseImage.alt = `License ${index + 1}`;
         licenseImage.classList.add("license-image");
         licenseImage.addEventListener("click", function () {
@@ -102,7 +102,7 @@ function displayUsers(users) {
                 formData.append('login_token', localStorage.getItem('login_token'));
                 formData.append('user_email', user.email);
                 formData.append('accepted', true);
-                let response = await fetch("http://127.0.0.1:8000/auth/accept_role/", {
+                let response = await fetch(AUTH_API + "/accept_role/", {
                     method: 'POST',
                     body: formData,
                 });
@@ -148,7 +148,7 @@ function displayUsers(users) {
                 formData.append('login_token', localStorage.getItem('login_token'));
                 formData.append('user_email', user.email);
                 formData.append('accepted', false);
-                let response = await fetch("http://127.0.0.1:8000/auth/accept_role/", {
+                let response = await fetch(AUTH_API + "/accept_role/", {
                     method: 'POST',
                     body: formData,
                 });
@@ -189,7 +189,7 @@ async function fetchUsers(role) {
         let formData = new FormData();
         formData.append('login_token', localStorage.getItem('login_token'));
         formData.append('role', role);
-        let response = await fetch("http://127.0.0.1:8000/auth/get_users_by_role/", {
+        let response = await fetch(AUTH_API + "/get_users_by_role/", {
             method: 'POST',
             body: formData,
         });
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded",  function () {
 
     logoutButton.addEventListener("click", async function (event) {
         try {
-            let response = await fetch("http://127.0.0.1:8000/auth/logout/", {
+            let response = await fetch(AUTH_API + "/logout/", {
                 method: 'GET',
                 headers: new Headers({'Authorization': localStorage.getItem('login_token')}),
             });

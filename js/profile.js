@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 userBoxDiv.appendChild(userAvatarDiv);
 
                 let userAvatarImg = document.createElement('img');
-                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : 'http://127.0.0.1:8000/auth' + user.image_profile; // Use the actual avatar URL or a default image
+                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile); // Use the actual avatar URL or a default image
                 userAvatarImg.alt = 'User ' + (index + 1) + ' Avatar';
                 userAvatarDiv.appendChild(userAvatarImg);
 
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let formData = new FormData();
             formData.append('login_token', localStorage.getItem('login_token'));
             formData.append('role', 'gym_manager');
-            let response = await fetch("http://127.0.0.1:8000/auth/get_users_by_role/", {
+            let response = await fetch(AUTH_API + "/get_users_by_role/", {
                 method: 'POST',
                 body: formData,
             });
@@ -431,7 +431,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
         let formData = new FormData();
         formData.append('login_token', localStorage.getItem('login_token'));
-        let response = await fetch("http://127.0.0.1:8000/auth/profile/", {
+        let response = await fetch(AUTH_API + "/profile/", {
             method: 'POST',
             body: formData,
         });
@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (response.status === 200) {
             emailInput.value = originData.email;
             usernameInput.value = originData.username;
-            profileImagePreview.src = originData.image_profile === null ? '../images/no_pic.png' : ('http://127.0.0.1:8000/auth' + originData.image_profile);
+            profileImagePreview.src = originData.image_profile === null ? '../images/no_pic.png' : (AUTH_API + originData.image_profile);
             bio.value = originData.bio;
             role.textContent = originData.role === 'simple_user' ? 'کاربر عادی' : (originData.role === 'coach' ? 'مربی' : (originData.role === 'gym_manager' ? 'سالن‌دار' : (originData.role === 'actor' ? 'قهرمان' : 'نقش کاربر تعریف نشده است')));
             pre_process(originData);
@@ -527,7 +527,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         console.log(originData)
         try {
-            let response = await fetch("http://127.0.0.1:8000/auth/update_profile/", {
+            let response = await fetch(AUTH_API + "/update_profile/", {
                 method: 'POST',
                 body: formData,
             });
@@ -622,7 +622,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     logoutButton.addEventListener("click", async function (event) {
         try {
-            let response = await fetch("http://127.0.0.1:8000/auth/logout/", {
+            let response = await fetch(AUTH_API + "/logout/", {
                 method: 'GET',
                 headers: new Headers({'Authorization': localStorage.getItem('login_token')}),
             });

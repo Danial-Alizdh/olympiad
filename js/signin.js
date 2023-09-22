@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("password", password);
 
         try {
-            let response = await fetch("http://127.0.0.1:8000/auth/login/", {
+            let response = await fetch(AUTH_API + "/login/", {
                 method: "POST",
                 body: formData,
             });

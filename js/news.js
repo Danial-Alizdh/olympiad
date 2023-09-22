@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function fetchData() {
 
         try {
-            let response = await fetch("http://127.0.0.1:8000/auth/get_department_news/", {
+            let response = await fetch(AUTH_API + "/get_department_news/", {
                 method: 'GET',
             });
             let data = await response.json();
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         newsDiv.className = 'news';
 
         const img = document.createElement('img');
-        img.src = news.image === null ? '../images/no_image.jpg' : ('http://127.0.0.1:8000/auth' + news.image);
+        img.src = news.image === null ? '../images/no_image.jpg' : (AUTH_API + news.image);
         img.alt = `News ${news.image}`;
 
         const h2 = document.createElement('h2');
