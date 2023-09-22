@@ -1,4 +1,5 @@
-const AUTH_API = 'http://127.0.0.1:8000/auth';
+// const AUTH_API = 'http://127.0.0.1:8000/auth';
+const AUTH_API = 'https://olympiad-server.onrender.com/auth';
 
 async function updateUI() {
     const signinButton = document.querySelector('.signin-button');
