@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-family: "B Kamran", sans-serif;
+    background-color: #d6b8e6;
+}
+
+.header {
+    background-color: #b19cd9;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.top-buttons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.top-buttons button {
+    font-size: 16px;
+    font-family: "B Nazanin", sans-serif;
+}
+
+.signin-button,
+.signup-button {
+    background-color: #b19cd9;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    display: none;
+}
+
+.button-link:hover .signin-button,
+.button-link:hover .signup-button {
+    background-color: #8955ef;
+}
+
+.button-link:focus .signin-button,
+.button-link:focus .signup-button {
+    background-color: #8955ef;
+    outline: none;
+}
+
+.username {
+    display: none;
+    padding: 10px 20px;
+    background-color: #b19cd9;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "B Nazanin", sans-serif;
+}
+
+.username:hover {
+    background-color: #9e77ee;
+}
+
+.container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.logo {
+    margin-top: 40px;
+}
+
+.container p {
+    margin-top: 2px;
+    margin-bottom: 30px;
+    font-family: "B Nazanin", sans-serif;
+    font-size: 18px;
+    color: #592986;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px;
+    background-color: #e9cced;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 10px 10px 30px;
+}
+
+.button .icon {
+    margin: -10% auto 0;
+    width: 50px;
+    height: 50px;
+}
+
+.button .title {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #b72666;
+}
+
+.button .description {
+    color: #d56b95;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 80%;
+    }
+}
+
+.sentence {
+    position: absolute;
+    top: 30px;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.sentence p {
+    font-size: 16px;
+    font-family: 'B Nazanin';
+    color: #93566c;
+}
+/* CSS for the footer */
+.footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'B Nazanin';
+    margin-top: -30px;
+}
+
+/* Add any additional styles you want for the footer here */

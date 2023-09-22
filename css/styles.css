@@ -1,0 +1,304 @@
+body {
+    font-family: "B Nazanin", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: inherit;
+    align-items: revert;
+}
+
+/* CSS for the logout link and icon */
+.logout-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #333; /* Text color */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.logout-link i {
+    margin-right: 5px; /* Adjust the space between text and icon */
+    font-size: 12px; /* Adjust the icon size */
+}
+
+/* Style the link on hover if desired */
+.logout-link:hover {
+    color: #ff0000; /* Change the text color on hover */
+}
+
+#backButton {
+    color: #333; /* Text color */
+    position: fixed;
+    top: 10px; /* Adjust this value to set the desired top position */
+    left: 10px; /* Adjust this value to set the desired left position */
+    text-decoration: none; /* Remove underlines from the link text */
+    /*padding: 5px 10px; !* Add padding to the button (optional) *!*/
+}
+
+/* Style the back icon */
+#backButton .fas {
+    margin-right: 2px; /* Add some spacing between the text and icon (optional) */
+    font-size: 12px; /* Adjust the icon size */
+}
+
+/* Add this CSS for circular image container */
+.image-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.image-preview {
+    border-radius: 80%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-preview img {
+    width: 150px;
+    height: 150px;
+}
+
+.logo {
+    display: block;
+    height: auto;
+    width: 50px;
+    margin: -20px auto 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "B Nazanin", sans-serif;
+    font-size: 14px;
+}
+
+button {
+    font-family: "B Nazanin", sans-serif;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 30px auto 0;
+    display: block;
+    width: 60%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.centered-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.centered-button a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.centered-button a:hover {
+    text-decoration: underline;
+}
+
+#message {
+    text-align: center;
+    color: red;
+}
+
+/* ... (existing CSS rules remain the same) ... */
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center; /* Center the text within the container */
+}
+
+.profile-photo {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-info {
+    width: 100%;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.username label {
+    min-width: 20%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.info-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-label label {
+    min-width: 20%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.info-label input {
+    flex-grow: 1;
+    font-family: "B Nazanin", sans-serif;
+    font-size: 18px;
+}
+
+.rate {
+    margin-top: 20px;
+}
+
+#saveButton {
+    font-family: 'B Nazanin', sans-serif;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Style for the button when it's disabled */
+#saveButton:disabled {
+    background-color: #b6b6b6;
+    cursor: not-allowed;
+}
+
+.upload_pics {
+    font-family: "B Nazanin", sans-serif;
+    font-size: 16px;
+    background-color: #07b1fa;
+    color: #fff;
+    width: 70%;
+    margin-top: 25px;
+}
+
+.upload_pics:hover {
+    background-color: #6b00b3;
+}
+
+.star-rating {
+    font-size: 28px;
+    color: #e3c013;
+}
+
+.star {
+    color: #a9a9a9;
+}
+
+.custom-textarea {
+    height: 100px;
+    width: 300px;
+}
+
+/* Center the items vertically and horizontally within the user container */
+.user-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* Style for each user box */
+.user-box {
+    background-color: #ffffff; /* Background color for the box */
+    border: 1px solid #ccc; /* Border around the box */
+    padding: 10px; /* Padding inside the box */
+    margin: 10px 30px 0; /* Spacing between user boxes */
+    border-radius: 5px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center horizontally within the box */
+}
+
+/* Style for user avatars */
+.user-avatar img {
+    width: 50px; /* Adjust the avatar image size as needed */
+    height: 50px;
+    border-radius: 50%; /* Rounded avatar image */
+}
+
+/* Style for user details */
+.user-details {
+    font-size: 16px; /* Adjust the font size as needed */
+    text-align: center; /* Center the text within the user details */
+}
+
+/* Style for user details text */
+.user-details p {
+    margin: 8px 0 0;
+}
+
+
+
+

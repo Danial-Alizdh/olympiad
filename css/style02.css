@@ -1,0 +1,251 @@
+body {
+    font-family: "B Nazanin", sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#backButton {
+    color: #333; /* Text color */
+    position: fixed;
+    top: 10px; /* Adjust this value to set the desired top position */
+    left: 10px; /* Adjust this value to set the desired left position */
+    text-decoration: none; /* Remove underlines from the link text */
+    /*padding: 5px 10px; !* Add padding to the button (optional) *!*/
+    /*background-color: #00A0D1;*/
+    /*border-radius: 5px;*/
+}
+
+/* Style the back icon */
+#backButton .fas {
+    margin-right: 2px; /* Add some spacing between the text and icon (optional) */
+    font-size: 12px; /* Adjust the icon size */
+}
+
+.container {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.coach-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.coach {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.coach img {
+    border-radius: 5px;
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.gym-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gym {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.gym img {
+    border-radius: 5px;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.gym h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.gym p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.gym a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.news {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-align: right;
+    width: 300px;
+}
+
+.news img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.news h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.news p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.actor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.actor {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.actor img {
+    border-radius: 5px;
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.star-rating {
+    margin-top: -10px;
+    font-size: 28px;
+    color: #e3c013;
+}
+
+.star {
+    color: #a9a9a9;
+}
+
+/* Style for the checkboxes */
+.swal2-checkbox {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.swal2-input {
+    margin-right: 10px;
+}
+
+.swal2-label {
+    font-size: 16px;
+}
+
+/* Style for the SweetAlert dialog */
+.swal2-popup {
+    width: 400px;
+    text-align: center;
+}
+
+/* Style for the dialog title */
+.swal2-title {
+    font-size: 20px;
+}
+
+/* Style for the confirm and cancel buttons */
+.swal2-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.swal2-confirm {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.swal2-confirm:hover {
+    background-color: #45a049;
+}
+
+.swal2-cancel {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.swal2-cancel:hover {
+    background-color: #d32f2f;
+}
+
+/* Style for the custom confirm button */
+.custom-confirm-button {
+    font-family: "B Nazanin", sans-serif; /* Replace with your desired font */
+    font-size: 18px; /* Adjust the font size as needed */
+    /* Add any other styles you want */
+}

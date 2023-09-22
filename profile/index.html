@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir=rtl lang=fa-IR>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon_bg.png" type="image/x-icon">
+    <script src="../js/cdn.jsdelivr.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>پروفایل</title>
+</head>
+<body>
+<div class="profile-container">
+    <a id="logoutButton" class="logout-link">خروج <i class="fas fa-sign-out-alt"></i></a>
+    <a id="backButton" class="back-link">بازگشت <i class="fas fa-arrow-left"></i></a>
+    <div class="image-input">
+        <label for="profileImage" class="image-preview">
+            <img src="../images/no_pic.png" id="profileImagePreview" alt="Profile Image">
+        </label>
+        <input type="file" id="profileImage" accept="image/*" style="display: none;">
+    </div>
+    <div class="profile-info">
+        <div class="username">
+            <label for="email">آدرس ایمیل :</label>
+            <input type="text" id="email" disabled>
+        </div>
+        <div class="info-label">
+            <label for="username">نام کاربری :</label>
+            <input type="text" id="username">
+        </div>
+        <div class="info-label">
+            <label for="bio">بیوگرافی :</label>
+            <textarea id="bio" class="custom-textarea" style="font-size: 16px;"></textarea>
+        </div>
+        <div class="info-label" style="margin-top: 20px; margin-bottom: 10px;">
+            <label for="role">نقش شما در سامانه :</label>
+            <span id="role" style="color: #13776c; font-weight: bold; margin-bottom: 5px; margin-right: 5px"></span>
+            <a id="changeRole" style="margin-right: 10px; margin-top: -2px; color: #0d77e1;">(تغییر)</a>
+        </div>
+
+        <div id="additionalFieldsContainer"></div>
+
+        <div class="save-button">
+            <button id="saveButton" disabled>ذخیره اطلاعات</button>
+        </div>
+    </div>
+    <div id="rate" class="rate" style="display: none">
+        <h2>مجموع امتیاز شما طبق نظرسنجی دیگران</h2>
+        <div class="star-rating">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <p id="number_rate" style="margin: 2px 0 0;"></p>
+        </div>
+    </div>
+    <p id="process" style="display: none">درخواست شما هنوز بررسی نشده است</p>
+</div>
+<script src="../js/profile.js"></script>
+</body>
+</html>
