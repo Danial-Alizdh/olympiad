@@ -1,12 +1,13 @@
 body {
     font-family: "B Nazanin", sans-serif;
-    background-color: #f0f0f0;
+    background-color: #e7e7e7;
+    background-image: url("../images/bg1.jpg");
     margin: 0;
     padding: 0;
 }
 
 #backButton {
-    color: #333; /* Text color */
+    color: #d9d9d9; /* Text color */
     position: fixed;
     top: 10px; /* Adjust this value to set the desired top position */
     left: 10px; /* Adjust this value to set the desired left position */
@@ -39,7 +40,7 @@ h1 {
 }
 
 .coach {
-    background-color: #fff;
+    background-color: #12a5d2;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -56,9 +57,10 @@ h1 {
     display: block;
 }
 
-h2 {
+.coach h2 {
     margin-top: 10px;
     font-size: 18px;
+    color: #f6f6f6;
 }
 
 .social-media {
@@ -71,10 +73,10 @@ h2 {
     margin: 0 10px;
 }
 
-p {
+.coach p {
     margin-top: 10px;
     font-size: 14px;
-    color: #888;
+    color: #282828;
 }
 
 .gym-list {
@@ -84,7 +86,7 @@ p {
 }
 
 .gym {
-    background-color: #fff;
+    background-color: #12a5d2;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -104,19 +106,20 @@ p {
 .gym h2 {
     margin-top: 10px;
     font-size: 18px;
+    color: #f6f6f6;
 }
 
 .gym p {
     margin-top: 10px;
     font-size: 14px;
-    color: #888;
+    color: #282828;
 }
 
 .gym a {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    color: #007bff;
+    color: #3800de;
     font-weight: bold;
 }
 
@@ -127,7 +130,7 @@ p {
 }
 
 .news {
-    background-color: #fff;
+    background-color: #12a5d2;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -145,12 +148,13 @@ p {
 .news h2 {
     margin-top: 10px;
     font-size: 18px;
+    color: #f6f6f6;
 }
 
 .news p {
     margin-top: 10px;
     font-size: 14px;
-    color: #888;
+    color: #282828;
 }
 
 .actor-list {
@@ -160,13 +164,25 @@ p {
 }
 
 .actor {
-    background-color: #fff;
+    background-color: #12a5d2;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
     padding: 20px;
     text-align: center;
     width: 300px;
+}
+
+.actor h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #f6f6f6;
+}
+
+.actor p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #282828;
 }
 
 .actor img {
@@ -180,11 +196,11 @@ p {
 .star-rating {
     margin-top: -10px;
     font-size: 28px;
-    color: #e3c013;
+    color: #fffb05;
 }
 
 .star {
-    color: #a9a9a9;
+    color: #c5c5c5;
 }
 
 /* Style for the checkboxes */

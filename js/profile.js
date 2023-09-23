@@ -410,9 +410,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const numberOfFilledStars = Math.round(data.rate * 2) / 2;
                 for (let i = 0; i < stars.length; i++) {
                     if (i < numberOfFilledStars) {
-                        stars[i].style.color = '#e3c013';
+                        stars[i].className = 'star-rating';
                     } else {
-                        stars[i].style.color = '#a9a9a9';
+                        stars[i].className = 'star';
                     }
                 }
             }

@@ -60,9 +60,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Set the star color based on the rate value
             if (i <= rate) {
-                star.style.color = '#e3c013'; // Set filled stars to yellow
-            } else {
-                star.style.color = '#a9a9a9'; // Set empty stars to gray or any other color
+                star.className = 'star-rating';
             }
 
             starRating.appendChild(star);

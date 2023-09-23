@@ -1,13 +1,15 @@
 body {
     font-family: "B Nazanin", sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e7e7e7;
+    background-image: url("../images/bg1.jpg");
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
 
 .container {
     margin: 0 auto;
-    background-color: #fff;
+    /*background-color: #fff;*/
     padding: 50px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -24,7 +26,7 @@ body {
     top: 10px;
     right: 10px;
     text-decoration: none;
-    color: #333; /* Text color */
+    color: #d9d9d9; /* Text color */
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -38,11 +40,11 @@ body {
 
 /* Style the link on hover if desired */
 .logout-link:hover {
-    color: #ff0000; /* Change the text color on hover */
+    color: #9f0000; /* Change the text color on hover */
 }
 
 #backButton {
-    color: #333; /* Text color */
+    color: #d9d9d9; /* Text color */
     position: fixed;
     top: 10px; /* Adjust this value to set the desired top position */
     left: 10px; /* Adjust this value to set the desired left position */
@@ -97,6 +99,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 5px;
+    color: #161c2d;
 }
 
 input[type="email"],
@@ -105,16 +108,18 @@ input[type="password"],
 textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #8de1ff;
+    border-radius: 8px;
     font-family: "B Nazanin", sans-serif;
     font-size: 14px;
+    background-color: #8de1ff;
+    color: #003d54;
 }
 
 button {
     font-family: "B Nazanin", sans-serif;
     font-size: 18px;
-    background-color: #007bff;
+    background-color: #237a96;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -136,7 +141,7 @@ button:hover {
 
 .centered-button a {
     text-decoration: none;
-    color: #007bff;
+    color: #001448;
 }
 
 .centered-button a:hover {
@@ -243,6 +248,10 @@ button:hover {
     margin-top: 25px;
 }
 
+#additionalFieldsContainer h3 {
+    color: #ffffff;
+}
+
 .upload_pics:hover {
     background-color: #6b00b3;
 }
@@ -254,6 +263,10 @@ button:hover {
 
 .star {
     color: #a9a9a9;
+}
+
+.rate h2 {
+    color: #fdf900;
 }
 
 .custom-textarea {
@@ -271,11 +284,11 @@ button:hover {
 
 /* Style for each user box */
 .user-box {
-    background-color: #ffffff; /* Background color for the box */
-    border: 1px solid #ccc; /* Border around the box */
+    background-color: #12a5d2; /* Background color for the box */
+    border: 1px solid #12a5d2; /* Border around the box */
     padding: 10px; /* Padding inside the box */
     margin: 10px 30px 0; /* Spacing between user boxes */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 10px; /* Rounded corners */
     display: flex;
     flex-direction: column; /* Stack the content vertically */
     align-items: center; /* Center horizontally within the box */
@@ -292,6 +305,7 @@ button:hover {
 .user-details {
     font-size: 16px; /* Adjust the font size as needed */
     text-align: center; /* Center the text within the user details */
+    color: #ececec;
 }
 
 /* Style for user details text */
