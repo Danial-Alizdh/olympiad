@@ -20,18 +20,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const username = document.getElementById("username").value;
         const email = document.getElementById("email").value;
+        const phone_number = document.getElementById("phone_number").value;
         const password = document.getElementById("password").value;
         const re_password = document.getElementById("re_password").value;
         const passwordError = document.getElementById("password-error");
+        const phoneNumberError = document.getElementById("phone_number-error");
+
+        if (phone_number.length !== 11) {
+            phoneNumberError.style.display = 'inline-block';
+            phoneNumberError.textContent = "شماره وارد شده معتبر نیست";
+            return;
+        }
+        else {
+            phoneNumberError.style.display = 'none';
+        }
 
         if (password !== re_password) {
+            passwordError.style.display = 'inline-block';
             passwordError.textContent = "گذرواژه‌ها باید یکسان باشند";
-            return; // Don't proceed with the form submission
+            return;
+        }
+        else {
+            passwordError.style.display = 'none';
         }
 
         const formData = new FormData();
         formData.append("username", username);
         formData.append("email", email);
+        formData.append("phone_number", phone_number);
         formData.append("password", password);
         if (profileImage.files[0]) {
             formData.append("image_profile", profileImage.files[0]);
