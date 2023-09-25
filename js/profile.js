@@ -397,16 +397,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (data.role && data.role !== 'simple_user') {
             changeRole.style.display = 'none';
             if (!data.accepted && !data.rejected) {
-                process.style.display = 'inline-block'
+                process.style.display = 'inline-block';
             }
             else if (data.rejected) {
-                process.style.display = 'inline-block'
-                process.textContent = 'درخواست شما توسط ادمین رد شد'
+                process.style.display = 'inline-block';
+                changeRole.style.display = 'inline-bloc';
+                process.textContent = 'درخواست شما توسط ادمین رد شد';
                 process.style.color = '#e01616';
             }
             else if (data.accepted) {
                 starRatingDiv.style.display = 'inline-block';
-                number_rate.textContent = data.rate
+                number_rate.textContent = data.rate;
                 const numberOfFilledStars = Math.round(data.rate * 2) / 2;
                 for (let i = 0; i < stars.length; i++) {
                     if (i < numberOfFilledStars) {
@@ -441,7 +442,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             usernameInput.value = originData.username;
             profileImagePreview.src = originData.image_profile === null ? '../images/no_pic.png' : (AUTH_API + originData.image_profile);
             bio.value = originData.bio;
-            role.textContent = originData.role === 'simple_user' ? 'کاربر عادی' : (originData.role === 'coach' ? 'مربی' : (originData.role === 'gym_manager' ? 'سالن‌دار' : (originData.role === 'actor' ? 'قهرمان' : 'نقش کاربر تعریف نشده است')));
+            role.textContent = originData.role === 'simple_user' ? 'کاربر عادی' : (originData.role === 'coach' ? 'مربی' : (originData.role === 'gym_manager' ? 'سالن‌دار' : (originData.role === 'actor' ? 'قهرمان' : (originData.role === 'office_admin' ? 'ادمین اداره' : (originData.role === 'office_manager' ? 'مدیر اداره' : (originData.role === 'office_expert' ? 'کارشناس اداره' : (originData.role === 'board_admin' ? 'ادمین هیئت' : (originData.role === 'board_authorities' ? 'مسئول هیئت' : 'نقش کاربر تعریف نشده است'))))))));
             pre_process(originData);
         } else {
             Swal.fire({
@@ -525,7 +526,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 formData.append(key, originData[key]);
             }
         }
-        console.log(originData)
         try {
             let response = await fetch(AUTH_API + "/update_profile/", {
                 method: 'POST',
@@ -561,7 +561,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     changeRole.addEventListener('click', function (event) {
-        const options = ['مربی‌گری', 'سالن‌دار', 'قهرمان'];
+        const options = ['مربی‌گری', 'سالن‌دار', 'قهرمان', 'ادمین اداره', 'ادمین هیئت'];
         const radioButtons = options
             .map((option, index) => {
                 return `
@@ -592,7 +592,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 // saveData.append('role', result.value === 'مربی‌گری‌' ? 'coach' : result.value === 'سالن‌دار' ? 'gym_manager' : result.value === 'قهرمان' ? 'actor' : 'simple_user');
-                originData['role'] = result.value === 'مربی‌گری' ? 'coach' : result.value === 'سالن‌دار' ? 'gym_manager' : result.value === 'قهرمان' ? 'actor' : 'simple_user';
+                originData['role'] = result.value === 'مربی‌گری' ? 'coach' : result.value === 'سالن‌دار' ? 'gym_manager' : result.value === 'قهرمان' ? 'actor' : result.value === 'ادمین اداره' ? 'office_admin' : result.value === 'ادمین هیئت' ? 'board_admin' : 'simple_user';
                 role.textContent = result.value;
                 if (result.value === 'مربی‌گری') {
                     addCoachElements({'document_image': null,
@@ -613,6 +613,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                     addActorElements({
                         'field': null,
                         'document_image': null});
+                } else if (result.value === 'ادمین هیئت' || result.value === 'ادمین اداره') {
+                    saveButton.disabled = true;
                 }
                 process.style.display = 'inline-block'
             }
