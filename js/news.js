@@ -1,8 +1,14 @@
 document.addEventListener("DOMContentLoaded", async function () {
+    const addNews = document.getElementById("addNews");
     const backButton = document.getElementById("backButton");
 
     backButton.addEventListener("click", function (event) {
         window.location.href = '../';
+    });
+
+    addNews.addEventListener("click", function (event) {
+        // window.location.href = '../';
+        console.log('add news')
     });
 
     // Define an async function to fetch data from the API
@@ -11,9 +17,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         try {
             let response = await fetch(AUTH_API + "/get_department_news/", {
                 method: 'GET',
+                headers: {
+                    'Authorization': localStorage.getItem('login_token')
+                }
             });
             let data = await response.json();
             if (response.status === 200) {
+                if (data.addNews) {
+                    addNews.style.display = 'flex';
+                }
                 if (data.news) {
                     return data.news
                 }

@@ -6,6 +6,26 @@ body {
     padding: 0;
 }
 
+.add {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #d9d9d9; /* Text color */
+    font-size: 14px;
+    font-weight: bold;
+    /*display: flex;*/
+    display: none;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.add i {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 #backButton {
     color: #d9d9d9; /* Text color */
     position: fixed;
@@ -25,7 +45,7 @@ body {
 
 .container {
     text-align: center;
-    margin: 20px;
+    margin: 30px 20px 20px;
 }
 
 h1 {

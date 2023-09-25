@@ -1,0 +1,139 @@
+body {
+    font-family: "B Nazanin", sans-serif;
+    background-color: #e7e7e7;
+    background-image: url("../images/bg1.jpg");
+    margin: 0;
+    padding: 0;
+}
+
+#backButton {
+    color: #d9d9d9; /* Text color */
+    position: fixed;
+    top: 10px; /* Adjust this value to set the desired top position */
+    left: 10px; /* Adjust this value to set the desired left position */
+    text-decoration: none; /* Remove underlines from the link text */
+    /*padding: 5px 10px; !* Add padding to the button (optional) *!*/
+    /*background-color: #00A0D1;*/
+    /*border-radius: 5px;*/
+}
+
+/* Style the back icon */
+#backButton .fas {
+    margin-right: 2px; /* Add some spacing between the text and icon (optional) */
+    font-size: 12px; /* Adjust the icon size */
+}
+
+
+.add {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #d9d9d9; /* Text color */
+    font-size: 14px;
+    font-weight: bold;
+    /*display: flex;*/
+    display: none;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.add i {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.board-card {
+    width: 300px;
+    background-color: #12a5d2;
+    border: 1px solid #12a5d2;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 35px 20px 20px;
+}
+
+/* Style for the board's name */
+.board-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f6f6f6;
+}
+
+/* Style for the star rating */
+.board-rate,
+.office-rate {
+    color: #ffd700; /* Gold color for stars */
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Style for the location */
+.board-location,
+.board-goals {
+    font-size: 14px;
+    color: #282828;
+    margin-top: 10px;
+}
+
+/* CSS for the class list */
+.class-list,
+.game-list,
+.office-list {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* CSS for each class item */
+.class-item,
+.game-item,
+.office-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* CSS for class name */
+.class-name,
+.game-name,
+.office-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f6f6f6;
+    margin-bottom: 10px;
+}
+
+/* CSS for date and time */
+.class-datetime,
+.class-location,
+.class-capacity,
+.class-users,
+.game-datetime,
+.game-location,
+.board-name,
+.office-location {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #282828;
+}
+
+/* CSS for link */
+.class-link {
+    font-size: 16px;
+    color: #075cb0;
+    text-decoration: underline;
+}
+
+/* CSS for game image */
+.game-image {
+    width: 90%;
+    height: 90%;
+    display: block; /* Center the image horizontally */
+    /* Center the image horizontally */
+    margin: 0 auto 10px;
+}

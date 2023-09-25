@@ -5,6 +5,7 @@ body {
     font-family: "B Kamran", sans-serif;
     background-color: #e7e7e7;
     background-image: url("../images/bg1.jpg");
+    background-size: cover;
 }
 
 .header {
