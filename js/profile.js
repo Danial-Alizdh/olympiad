@@ -428,138 +428,253 @@ document.addEventListener("DOMContentLoaded", async function () {
             updateHasChanges();
         });
 
+        let h3ExpertElement = document.createElement("h3");
+        h3ExpertElement.textContent = "کارشناس‌ها";
+        container.appendChild(h3ExpertElement);
 
-        let selectManagerContainer = document.createElement("div");
-        selectManagerContainer.style.display = "flex";
-        selectManagerContainer.style.alignItems = "center";
-        container.appendChild(selectManagerContainer);
+        let expertContainer = document.createElement("div");
+        expertContainer.className = "values-container";
+        if (data.expert) {
+            data.expert.forEach(function (user, index) {
+                let userDiv = document.createElement('div');
+                userDiv.className = 'value';
+                expertContainer.appendChild(userDiv);
 
-        let selectManagerLabel = document.createElement("label");
-        selectManagerLabel.style.marginRight = "10px";
-        selectManagerLabel.textContent = "انتخاب مدیران :";
-        selectManagerContainer.appendChild(selectManagerLabel);
+                let userBoxDiv = document.createElement('div');
+                userBoxDiv.className = 'user-box';
+                userDiv.appendChild(userBoxDiv);
 
-        let selectManagerElement = document.createElement("select");
-        selectManagerElement.style.marginRight = "10px";
-        selectManagerElement.style.marginTop = "-5px";
-        selectManagerElement.style.border = "1px solid #ccc";
-        selectManagerElement.style.color = "#2c2c2c";
-        selectManagerElement.style.fontFamily = "B Nazanin, sans-serif";
-        selectManagerElement.style.fontSize = "16px";
-        selectManagerElement.style.padding = "5px";
-        selectManagerElement.style.borderRadius = "5px";
-        selectManagerElement.id = "authSelect";
-        selectManagerElement.name = "auth";
-        selectManagerElement.addEventListener("click", function () {
-            // saveData.append('gym', selectManagerElement.value);
-            // originData['gym'] = selectManagerElement.value;
-            selectFlag = true;
-            // updateHasChanges();
-        });
-        selectManagerContainer.appendChild(selectManagerElement);
+                let userAvatarDiv = document.createElement('div');
+                userAvatarDiv.className = 'user-avatar';
+                userBoxDiv.appendChild(userAvatarDiv);
 
-        // try {
-        //     let formData = new FormData();
-        //     formData.append('login_token', localStorage.getItem('login_token'));
-        //     formData.append('role', 'gym_manager');
-        //     let response = await fetch(AUTH_API + "/get_users_by_role/", {
-        //         method: 'POST',
-        //         body: formData,
-        //     });
-        //     let gyms = await response.json();
-        //     if (response.status === 200) {
-        //         if (gyms.data !== undefined) {
-        //             gyms.data.forEach(function (optionData) {
-        //                 let optionElement = document.createElement("option");
-        //                 optionElement.value = optionData.email;
-        //                 optionElement.textContent = optionData.name;
-        //                 selectElement.appendChild(optionElement);
-        //             });
-        //         }
-        //     } else {
-        //         Swal.fire({
-        //             icon: "error",
-        //             title: 'مشکلی رخ داده است',
-        //             text: gyms.errors.message,
-        //             showConfirmButton: !1,
-        //             timer: 2000
-        //         });
-        //     }
-        // } catch (error) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: 'مشکلی رخ داده است',
-        //         text: error,
-        //         showConfirmButton: !1,
-        //         timer: 2000
-        //     });
-        // }
+                let userAvatarImg = document.createElement('img');
+                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile); // Use the actual avatar URL or a default image
+                userAvatarImg.alt = 'User ' + (index + 1) + ' Avatar';
+                userAvatarDiv.appendChild(userAvatarImg);
 
-        let selectAuthContainer = document.createElement("div");
-        selectAuthContainer.style.display = "flex";
-        selectAuthContainer.style.alignItems = "center";
-        container.appendChild(selectAuthContainer);
+                let userDetailsDiv = document.createElement('div');
+                userDetailsDiv.className = 'user-details';
+                userBoxDiv.appendChild(userDetailsDiv);
 
-        let selectAuthLabel = document.createElement("label");
-        selectAuthLabel.style.marginRight = "10px";
-        selectAuthLabel.textContent = "انتخاب کارشناسان :";
-        selectAuthContainer.appendChild(selectAuthLabel);
+                let usernameP = document.createElement('p');
+                usernameP.textContent = 'نام کاربری : ' + user.username;
+                userDetailsDiv.appendChild(usernameP);
 
-        let selectAuthElement = document.createElement("select");
-        selectAuthElement.style.marginRight = "10px";
-        selectAuthElement.style.marginTop = "-5px";
-        selectAuthElement.style.border = "1px solid #ccc";
-        selectAuthElement.style.color = "#2c2c2c";
-        selectAuthElement.style.fontFamily = "B Nazanin, sans-serif";
-        selectAuthElement.style.fontSize = "16px";
-        selectAuthElement.style.padding = "5px";
-        selectAuthElement.style.borderRadius = "5px";
-        selectAuthElement.id = "authSelect";
-        selectAuthElement.name = "auth";
-        selectAuthElement.addEventListener("click", function () {
-            // saveData.append('gym', selectAuthElement.value);
-            // originData['gym'] = selectAuthElement.value;
-            selectFlag = true;
-            // updateHasChanges();
-        });
-        selectAuthContainer.appendChild(selectAuthElement);
+                let scoreP = document.createElement('p');
+                scoreP.textContent = 'امتیاز : ' + user.rate;
+                userDetailsDiv.appendChild(scoreP);
 
-        // try {
-        //     let formData = new FormData();
-        //     formData.append('login_token', localStorage.getItem('login_token'));
-        //     formData.append('role', 'gym_manager');
-        //     let response = await fetch(AUTH_API + "/get_users_by_role/", {
-        //         method: 'POST',
-        //         body: formData,
-        //     });
-        //     let gyms = await response.json();
-        //     if (response.status === 200) {
-        //         if (gyms.data !== undefined) {
-        //             gyms.data.forEach(function (optionData) {
-        //                 let optionElement = document.createElement("option");
-        //                 optionElement.value = optionData.email;
-        //                 optionElement.textContent = optionData.name;
-        //                 selectElement.appendChild(optionElement);
-        //             });
-        //         }
-        //     } else {
-        //         Swal.fire({
-        //             icon: "error",
-        //             title: 'مشکلی رخ داده است',
-        //             text: gyms.errors.message,
-        //             showConfirmButton: !1,
-        //             timer: 2000
-        //         });
-        //     }
-        // } catch (error) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: 'مشکلی رخ داده است',
-        //         text: error,
-        //         showConfirmButton: !1,
-        //         timer: 2000
-        //     });
-        // }
+                let acceptIcon = document.createElement('i');
+                acceptIcon.className = 'fa fa-check-circle';
+                acceptIcon.style.color = 'green'; // Change the color as needed
+                acceptIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                acceptIcon.title = 'Accept Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(acceptIcon);
+
+                acceptIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', true);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            acceptIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+
+                let rejectIcon = document.createElement('i');
+                rejectIcon.className = 'fa fa-times-circle';
+                rejectIcon.style.color = '#961717'; // Change the color as needed
+                rejectIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                rejectIcon.title = 'Reject Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(rejectIcon);
+
+                rejectIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', false);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            rejectIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+            });
+        }
+        container.appendChild(expertContainer);
+
+        let h3ManagerElement = document.createElement("h3");
+        h3ManagerElement.textContent = "مدیرها";
+        container.appendChild(h3ManagerElement);
+
+        let managerContainer = document.createElement("div");
+        managerContainer.className = "values-container";
+        if (data.manager) {
+            data.manager.forEach(function (user, index) {
+                let userDiv = document.createElement('div');
+                userDiv.className = 'value';
+                managerContainer.appendChild(userDiv);
+
+                let userBoxDiv = document.createElement('div');
+                userBoxDiv.className = 'user-box';
+                userDiv.appendChild(userBoxDiv);
+
+                let userAvatarDiv = document.createElement('div');
+                userAvatarDiv.className = 'user-avatar';
+                userBoxDiv.appendChild(userAvatarDiv);
+
+                let userAvatarImg = document.createElement('img');
+                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile); // Use the actual avatar URL or a default image
+                userAvatarImg.alt = 'User ' + (index + 1) + ' Avatar';
+                userAvatarDiv.appendChild(userAvatarImg);
+
+                let userDetailsDiv = document.createElement('div');
+                userDetailsDiv.className = 'user-details';
+                userBoxDiv.appendChild(userDetailsDiv);
+
+                let usernameP = document.createElement('p');
+                usernameP.textContent = 'نام کاربری : ' + user.username;
+                userDetailsDiv.appendChild(usernameP);
+
+                let scoreP = document.createElement('p');
+                scoreP.textContent = 'امتیاز : ' + user.rate;
+                userDetailsDiv.appendChild(scoreP);
+
+                let acceptIcon = document.createElement('i');
+                acceptIcon.className = 'fa fa-check-circle';
+                acceptIcon.style.color = 'green'; // Change the color as needed
+                acceptIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                acceptIcon.title = 'Accept Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(acceptIcon);
+
+                acceptIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', true);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            acceptIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+
+                let rejectIcon = document.createElement('i');
+                rejectIcon.className = 'fa fa-times-circle';
+                rejectIcon.style.color = '#961717'; // Change the color as needed
+                rejectIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                rejectIcon.title = 'Reject Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(rejectIcon);
+
+                rejectIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', false);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            rejectIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+            });
+        }
+        container.appendChild(managerContainer);
     }
 
     function addBoardElements(data) {
@@ -626,6 +741,134 @@ document.addEventListener("DOMContentLoaded", async function () {
             updateHasChanges();
         });
 
+        let h3Element = document.createElement("h3");
+        h3Element.textContent = "مسئول‌ها";
+        container.appendChild(h3Element);
+
+        let valuesContainer = document.createElement("div");
+        valuesContainer.className = "values-container";
+        if (data.auth) {
+            data.auth.forEach(function (user, index) {
+                let userDiv = document.createElement('div');
+                userDiv.className = 'value';
+                valuesContainer.appendChild(userDiv);
+
+                let userBoxDiv = document.createElement('div');
+                userBoxDiv.className = 'user-box';
+                userDiv.appendChild(userBoxDiv);
+
+                let userAvatarDiv = document.createElement('div');
+                userAvatarDiv.className = 'user-avatar';
+                userBoxDiv.appendChild(userAvatarDiv);
+
+                let userAvatarImg = document.createElement('img');
+                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile); // Use the actual avatar URL or a default image
+                userAvatarImg.alt = 'User ' + (index + 1) + ' Avatar';
+                userAvatarDiv.appendChild(userAvatarImg);
+
+                let userDetailsDiv = document.createElement('div');
+                userDetailsDiv.className = 'user-details';
+                userBoxDiv.appendChild(userDetailsDiv);
+
+                let usernameP = document.createElement('p');
+                usernameP.textContent = 'نام کاربری : ' + user.username;
+                userDetailsDiv.appendChild(usernameP);
+
+                let scoreP = document.createElement('p');
+                scoreP.textContent = 'امتیاز : ' + user.rate;
+                userDetailsDiv.appendChild(scoreP);
+
+                let acceptIcon = document.createElement('i');
+                acceptIcon.className = 'fa fa-check-circle';
+                acceptIcon.style.color = 'green'; // Change the color as needed
+                acceptIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                acceptIcon.title = 'Accept Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(acceptIcon);
+
+                acceptIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', true);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            acceptIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+
+                let rejectIcon = document.createElement('i');
+                rejectIcon.className = 'fa fa-times-circle';
+                rejectIcon.style.color = '#961717'; // Change the color as needed
+                rejectIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                rejectIcon.title = 'Reject Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(rejectIcon);
+
+                rejectIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', false);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            rejectIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+            });
+        }
+        container.appendChild(valuesContainer);
+    }
+
+    async function addAuthElements(data) {
+        let container = document.getElementById('additionalFieldsContainer');
+        container.innerHTML = '';
 
         let selectContainer = document.createElement("div");
         selectContainer.style.display = "flex";
@@ -634,7 +877,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let selectLabel = document.createElement("label");
         selectLabel.style.marginRight = "10px";
-        selectLabel.textContent = "انتخاب مسئولان :";
+        selectLabel.textContent = data.role === 'office_manager' ? 'انتخاب اداره : ' : data.role === 'office_expert' ? 'انتخاب اداره : ' : data.role === 'board_authorities' ? 'انتخاب هیئت : ' : '';
         selectContainer.appendChild(selectLabel);
 
         let selectElement = document.createElement("select");
@@ -646,54 +889,58 @@ document.addEventListener("DOMContentLoaded", async function () {
         selectElement.style.fontSize = "16px";
         selectElement.style.padding = "5px";
         selectElement.style.borderRadius = "5px";
-        selectElement.id = "authSelect";
-        selectElement.name = "auth";
+        selectElement.id = "placeSelect";
+        selectElement.name = "place";
         selectElement.addEventListener("click", function () {
             // saveData.append('gym', selectElement.value);
-            // originData['gym'] = selectElement.value;
+            if (data.role === 'office_manager' || data.role === 'office_expert') {
+                originData['office'] = selectElement.value;
+            }
+            else if (data.role === 'board_authorities') {
+                originData['board'] = selectElement.value;
+            }
             selectFlag = true;
-            // updateHasChanges();
+            updateHasChanges();
         });
         selectContainer.appendChild(selectElement);
 
-        // try {
-        //     let formData = new FormData();
-        //     formData.append('login_token', localStorage.getItem('login_token'));
-        //     formData.append('role', 'gym_manager');
-        //     let response = await fetch(AUTH_API + "/get_users_by_role/", {
-        //         method: 'POST',
-        //         body: formData,
-        //     });
-        //     let gyms = await response.json();
-        //     if (response.status === 200) {
-        //         if (gyms.data !== undefined) {
-        //             gyms.data.forEach(function (optionData) {
-        //                 let optionElement = document.createElement("option");
-        //                 optionElement.value = optionData.email;
-        //                 optionElement.textContent = optionData.name;
-        //                 selectElement.appendChild(optionElement);
-        //             });
-        //         }
-        //     } else {
-        //         Swal.fire({
-        //             icon: "error",
-        //             title: 'مشکلی رخ داده است',
-        //             text: gyms.errors.message,
-        //             showConfirmButton: !1,
-        //             timer: 2000
-        //         });
-        //     }
-        // } catch (error) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: 'مشکلی رخ داده است',
-        //         text: error,
-        //         showConfirmButton: !1,
-        //         timer: 2000
-        //     });
-        // }
+        try {
+            let formData = new FormData();
+            formData.append('login_token', localStorage.getItem('login_token'));
+            formData.append('role', data.role === 'office_manager' ? 'office_admin' : data.role === 'office_expert' ? 'office_admin' : data.role === 'board_authorities' ? 'board_admin' : '');
+            let response = await fetch(AUTH_API + "/get_users_by_role/", {
+                method: 'POST',
+                body: formData,
+            });
+            let place = await response.json();
+            if (response.status === 200) {
+                if (place.data !== undefined) {
+                    place.data.forEach(function (optionData) {
+                        let optionElement = document.createElement("option");
+                        optionElement.value = optionData.email;
+                        optionElement.textContent = optionData.name;
+                        selectElement.appendChild(optionElement);
+                    });
+                }
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: 'مشکلی رخ داده است',
+                    text: place.errors.message,
+                    showConfirmButton: !1,
+                    timer: 2000
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: 'مشکلی رخ داده است',
+                text: error,
+                showConfirmButton: !1,
+                timer: 2000
+            });
+        }
     }
-
 
     function pre_process(data) {
         const changeRole = document.getElementById('changeRole');
@@ -736,6 +983,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             addBoardElements(data);
         } else if (data.role === 'office_admin') {
             addOfficeElements(data);
+        } else if (data.role === 'office_manager' || data.role === 'office_expert' || data.role === 'board_authorities') {
+            addAuthElements(data)
         }
     }
 
@@ -874,7 +1123,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     changeRole.addEventListener('click', function (event) {
-        const options = ['مربی‌گری', 'سالن‌دار', 'قهرمان', 'ادمین اداره', 'ادمین هیئت'];
+        const options = ['مربی‌گری', 'سالن‌دار', 'قهرمان', 'مدیر اداره', 'کارشناس اداره', 'مسئول هیئت', 'ادمین اداره', 'ادمین هیئت'];
         const radioButtons = options
             .map((option, index) => {
                 return `
@@ -905,7 +1154,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 // saveData.append('role', result.value === 'مربی‌گری‌' ? 'coach' : result.value === 'سالن‌دار' ? 'gym_manager' : result.value === 'قهرمان' ? 'actor' : 'simple_user');
-                originData['role'] = result.value === 'مربی‌گری' ? 'coach' : result.value === 'سالن‌دار' ? 'gym_manager' : result.value === 'قهرمان' ? 'actor' : result.value === 'ادمین اداره' ? 'office_admin' : result.value === 'ادمین هیئت' ? 'board_admin' : 'simple_user';
+                originData['role'] = result.value === 'مربی‌گری' ? 'coach' : result.value === 'سالن‌دار' ? 'gym_manager' : result.value === 'قهرمان' ? 'actor' : result.value === 'ادمین اداره' ? 'office_admin' : result.value === 'ادمین هیئت' ? 'board_admin' : result.value === 'مدیر اداره' ? 'office_manager' : result.value === 'کارشناس اداره' ? 'office_expert' : result.value === 'مسئول هیئت' ? 'board_authorities' : 'simple_user';
                 role.textContent = result.value;
                 if (result.value === 'مربی‌گری') {
                     addCoachElements({'document_image': null,
@@ -939,6 +1188,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                         'location': null,
                         'auth': null,
                         'manager': null,
+                    })
+                } else if (result.value === 'مدیر اداره' || result.value === 'کارشناس اداره' || result.value === 'مسئول هیئت') {
+                    addAuthElements({
+                        'role': originData['role'],
+                        'place': null
                     })
                 }
                 process.style.display = 'inline-block'
