@@ -134,40 +134,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             joinClassButton.textContent = 'ثبت نام';
 
             joinClassButton.addEventListener('click', async function () {
-                let formData = new FormData()
-                formData.append('login_token', localStorage.getItem('login_token'));
-                formData.append('board_email', data.board_email);
-                try {
-                    let response = await fetch(AUTH_API + "/add_to_class/", {
-                        method: 'POST',
-                        body: formData,
-                    });
-                    let addData = await response.json();
-                    if (response.status === 200) {
-                        Swal.fire({
-                            icon: "success",
-                            title: addData.username + `، در کلاس ${data.name} ثبت نام شدید.`,
-                            showConfirmButton: !1,
-                            timer: 1500
-                        }).then(() => window.location.reload());
-                    } else {
-                        Swal.fire({
-                            icon: "error",
-                            title: 'مشکلی رخ داده است',
-                            text: addData.message,
-                            showConfirmButton: !1,
-                            timer: 2000
-                        });
-                    }
-                } catch (error) {
-                    Swal.fire({
-                        icon: "error",
-                        title: 'مشکلی رخ داده است',
-                        text: error,
-                        showConfirmButton: !1,
-                        timer: 2000
-                    });
-                }
+                window.location.href = `../add/index.html?type=${data.board_email}`;
             });
             classItem.appendChild(joinClassButton);
         }

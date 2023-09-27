@@ -341,7 +341,7 @@ function showFields(type) {
 // Create form groups for name, date, time, location, link, and capacity
         const nameFormGroup = createFormGroup('نام کامل:', 'text', 'full_name', true);
         const nationalFormGroup = createFormGroup('کدملی:', 'text', 'national_code', true);
-        const passportFormGroup = createFormGroup('شماره شناسنامه:', 'text', 'passport', true);
+        const passportFormGroup = createFormGroup('شماره شناسنامه:', 'text', 'passport_number', true);
         const fatherNameFormGroup = createFormGroup('نام پدر:', 'text', 'father_name', true);
         const phoneFormGroup = createFormGroup('شماره موبایل:', 'text', 'phone_number', true);
         const telephoneFormGroup = createFormGroup('شماره ثابت:', 'text', 'telephone_number', true);
@@ -358,6 +358,7 @@ function showFields(type) {
             event.preventDefault(); // Prevent the default form submission behavior
 
             const formData = new FormData(form);
+            console.log(type)
             formData.append('board_email', type);
             formData.append('login_token', localStorage.getItem('login_token'));
 
@@ -382,7 +383,7 @@ function showFields(type) {
                         title: 'ثبت نام شدید',
                         showConfirmButton: !1,
                         timer: 1500
-                    }).then(() => window.location.back());
+                    }).then(() => window.history.back());
                 }
             } catch (error) {
                 Swal.fire({

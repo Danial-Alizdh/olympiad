@@ -864,6 +864,130 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         }
         container.appendChild(valuesContainer);
+
+        let h3StudentElement = document.createElement("h3");
+        h3StudentElement.textContent = "افراد ثبت‌نام کرده در کلاس‌ها";
+        container.appendChild(h3StudentElement);
+
+        let studentContainer = document.createElement("div");
+        studentContainer.className = "values-container";
+        if (data.auth) {
+            data.auth.forEach(function (user, index) {
+                let userDiv = document.createElement('div');
+                userDiv.className = 'value';
+                studentContainer.appendChild(userDiv);
+
+                let userBoxDiv = document.createElement('div');
+                userBoxDiv.className = 'user-box';
+                userDiv.appendChild(userBoxDiv);
+
+                let userAvatarDiv = document.createElement('div');
+                userAvatarDiv.className = 'user-avatar';
+                userBoxDiv.appendChild(userAvatarDiv);
+
+                let userAvatarImg = document.createElement('img');
+                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile); // Use the actual avatar URL or a default image
+                userAvatarImg.alt = 'User ' + (index + 1) + ' Avatar';
+                userAvatarDiv.appendChild(userAvatarImg);
+
+                let userDetailsDiv = document.createElement('div');
+                userDetailsDiv.className = 'user-details';
+                userBoxDiv.appendChild(userDetailsDiv);
+
+                let usernameP = document.createElement('p');
+                usernameP.textContent = 'نام کاربری : ' + user.username;
+                userDetailsDiv.appendChild(usernameP);
+
+                let scoreP = document.createElement('p');
+                scoreP.textContent = 'امتیاز : ' + user.rate;
+                userDetailsDiv.appendChild(scoreP);
+
+                let acceptIcon = document.createElement('i');
+                acceptIcon.className = 'fa fa-check-circle';
+                acceptIcon.style.color = 'green'; // Change the color as needed
+                acceptIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                acceptIcon.title = 'Accept Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(acceptIcon);
+
+                acceptIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', true);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            acceptIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+
+                let rejectIcon = document.createElement('i');
+                rejectIcon.className = 'fa fa-times-circle';
+                rejectIcon.style.color = '#961717'; // Change the color as needed
+                rejectIcon.style.marginRight = '10px'; // Adjust the spacing as needed
+                rejectIcon.title = 'Reject Request'; // Tooltip for the icon
+                userDetailsDiv.appendChild(rejectIcon);
+
+                rejectIcon.addEventListener('click', async function() {
+                    try {
+                        let formData = new FormData();
+                        formData.append('login_token', localStorage.getItem('login_token'));
+                        formData.append('user_email', user.email);
+                        formData.append('accepted', false);
+                        let response = await fetch(AUTH_API + "/accept_role/", {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        const data = await response.json();
+
+                        if (response.status === 200) {
+                            rejectIcon.disabled = true;
+                            window.location.reload();
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: 'مشکلی رخ داده است',
+                                text: data.errors.message,
+                                showConfirmButton: !1,
+                                timer: 2000
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: error,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                });
+            });
+        }
+        container.appendChild(studentContainer);
     }
 
     async function addAuthElements(data) {
