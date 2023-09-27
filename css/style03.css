@@ -91,10 +91,12 @@ body {
 .class-item,
 .game-item,
 .office-item {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    background-color: #12a5d2;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    text-align: right;
+    margin-bottom: 10px;
 }
 
 /* CSS for class name */
@@ -136,4 +138,20 @@ body {
     display: block; /* Center the image horizontally */
     /* Center the image horizontally */
     margin: 0 auto 10px;
+}
+
+/* Basic button styling */
+button {
+    padding: 10px 20px;
+    background-color: #1950cc; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }

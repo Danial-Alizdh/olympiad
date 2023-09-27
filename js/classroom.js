@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const addClassroom = document.getElementById("addClass");
     const backButton = document.getElementById("backButton");
+    let classes = []
 
     backButton.addEventListener("click", function (event) {
         window.location.href = '../';
@@ -10,7 +11,41 @@ document.addEventListener("DOMContentLoaded", async function () {
         window.location.href = '../add/index.html?type=classroom';
     });
 
-    // Define an async function to fetch data from the API
+    async function getClasses() {
+        try {
+            let response = await fetch(AUTH_API + "/get_all_class/", {
+                method: 'GET',
+                headers: {
+                    'Authorization': localStorage.getItem('login_token')
+                }
+            });
+            let data = await response.json();
+            if (response.status === 200) {
+                if (data.data) {
+                    classes = data.data.map(item => item.board_email);
+                }
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: 'مشکلی رخ داده است',
+                    text: data.errors.message,
+                    showConfirmButton: !1,
+                    timer: 2000
+                }).then(() => {
+                    return [];
+                });
+            }
+        } catch (error) {
+            // Swal.fire({
+            //     icon: "error",
+            //     title: 'مشکلی رخ داده است',
+            //     text: error,
+            //     showConfirmButton: !1,
+            //     timer: 2000
+            // });
+        }
+    }
+
     async function fetchData() {
 
         try {
@@ -56,7 +91,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-// Define a function to create a classroom element
     function createClassroomElement(data) {
         const classItem = document.createElement('div');
         classItem.classList.add('class-item');
@@ -81,24 +115,68 @@ document.addEventListener("DOMContentLoaded", async function () {
         classUsers.classList.add('class-users');
         classUsers.textContent = `افراد ثبت نام شده : ${data.users}`;
 
-        const classLink = document.createElement('a');
-        classLink.classList.add('class-link');
-        classLink.href = data.link; // Set the link
-
-        classLink.textContent = 'پیوستن به کلاس'; // Set the link text
-
         classItem.appendChild(className);
         classItem.appendChild(classDateTime);
         classItem.appendChild(classLocation);
         classItem.appendChild(classCapacity);
         classItem.appendChild(classUsers);
-        classItem.appendChild(classLink);
+
+        if (classes.includes(data.board_email)) {
+            const classLink = document.createElement('a');
+            classLink.classList.add('class-link');
+            classLink.href = data.link; // Set the link
+            classLink.textContent = 'پیوستن به کلاس'; // Set the link text
+            classItem.appendChild(classLink);
+        }
+        else {
+            const joinClassButton = document.createElement('button');
+            joinClassButton.id = 'joinClassButton';
+            joinClassButton.textContent = 'ثبت نام';
+
+            joinClassButton.addEventListener('click', async function () {
+                let formData = new FormData()
+                formData.append('login_token', localStorage.getItem('login_token'));
+                formData.append('board_email', data.board_email);
+                try {
+                    let response = await fetch(AUTH_API + "/add_to_class/", {
+                        method: 'POST',
+                        body: formData,
+                    });
+                    let addData = await response.json();
+                    if (response.status === 200) {
+                        Swal.fire({
+                            icon: "success",
+                            title: addData.username + `، در کلاس ${data.name} ثبت نام شدید.`,
+                            showConfirmButton: !1,
+                            timer: 1500
+                        }).then(() => window.location.reload());
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: 'مشکلی رخ داده است',
+                            text: addData.message,
+                            showConfirmButton: !1,
+                            timer: 2000
+                        });
+                    }
+                } catch (error) {
+                    Swal.fire({
+                        icon: "error",
+                        title: 'مشکلی رخ داده است',
+                        text: error,
+                        showConfirmButton: !1,
+                        timer: 2000
+                    });
+                }
+            });
+            classItem.appendChild(joinClassButton);
+        }
 
         return classItem;
     }
 
-// Define an async function to initialize the classroom elements
     async function initializeClassroom() {
+        getClasses();
         const classroomData = await fetchData();
         const classList = document.getElementById('class-list');
 
@@ -108,7 +186,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-// Call the initializeClassroom function to load the classroom elements
     initializeClassroom();
 
 });

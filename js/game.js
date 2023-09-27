@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const gameLocation = document.createElement('div');
         gameLocation.classList.add('game-location');
-        gameLocation.textContent = data.location;
+        gameLocation.textContent = `محل برگزاری : ${data.location}`;
 
         const boardName = document.createElement('div');
         boardName.classList.add('board-name');
