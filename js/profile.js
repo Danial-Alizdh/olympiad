@@ -871,8 +871,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let studentContainer = document.createElement("div");
         studentContainer.className = "values-container";
-        if (data.auth) {
-            data.auth.forEach(function (user, index) {
+        if (data.classroom) {
+            data.classroom.forEach(function (user, index) {
                 let userDiv = document.createElement('div');
                 userDiv.className = 'value';
                 studentContainer.appendChild(userDiv);
@@ -881,26 +881,46 @@ document.addEventListener("DOMContentLoaded", async function () {
                 userBoxDiv.className = 'user-box';
                 userDiv.appendChild(userBoxDiv);
 
-                let userAvatarDiv = document.createElement('div');
-                userAvatarDiv.className = 'user-avatar';
-                userBoxDiv.appendChild(userAvatarDiv);
-
-                let userAvatarImg = document.createElement('img');
-                userAvatarImg.src = user.image_profile === null ? '../images/no_pic.png' : (AUTH_API + user.image_profile); // Use the actual avatar URL or a default image
-                userAvatarImg.alt = 'User ' + (index + 1) + ' Avatar';
-                userAvatarDiv.appendChild(userAvatarImg);
-
                 let userDetailsDiv = document.createElement('div');
                 userDetailsDiv.className = 'user-details';
                 userBoxDiv.appendChild(userDetailsDiv);
 
-                let usernameP = document.createElement('p');
-                usernameP.textContent = 'نام کاربری : ' + user.username;
-                userDetailsDiv.appendChild(usernameP);
+                let fullNameP = document.createElement('p');
+                fullNameP.textContent = 'نام کامل : ' + user.full_name
+                userDetailsDiv.appendChild(fullNameP);
 
-                let scoreP = document.createElement('p');
-                scoreP.textContent = 'امتیاز : ' + user.rate;
-                userDetailsDiv.appendChild(scoreP);
+                let fatherNameP = document.createElement('p');
+                fatherNameP.textContent = 'نام پدر : ' + user.father_name
+                userDetailsDiv.appendChild(fatherNameP);
+
+                let nationalCodeP = document.createElement('p');
+                nationalCodeP.textContent = 'کدملی : ' + user.national_code
+                userDetailsDiv.appendChild(nationalCodeP);
+
+                let passportNumberP = document.createElement('p');
+                passportNumberP.textContent = 'شماره شناسنامه : ' + user.passport_number
+                userDetailsDiv.appendChild(passportNumberP);
+
+                let phoneNumberP = document.createElement('p');
+                phoneNumberP.textContent = 'شماره همراه : ' + user.phone_number
+                userDetailsDiv.appendChild(phoneNumberP);
+
+                let telephoneNumberP = document.createElement('p');
+                telephoneNumberP.textContent = 'شماره ثابت : ' + user.telephone_number
+                userDetailsDiv.appendChild(telephoneNumberP);
+
+                let locationP = document.createElement('p');
+                locationP.textContent = 'آدرس : ' + user.location
+                userDetailsDiv.appendChild(locationP);
+
+                let locationCodeP = document.createElement('p');
+                locationCodeP.textContent = 'کدپستی : ' + user.location_code
+                userDetailsDiv.appendChild(locationCodeP);
+
+                let acceptedP = document.createElement('p');
+                acceptedP.textContent = 'وضعیت : ' + (user.accepted === true ? 'تایید شده' : user.rejected === true ? 'رد شده' : 'بررسی نشده')
+                userDetailsDiv.appendChild(acceptedP);
+
 
                 let acceptIcon = document.createElement('i');
                 acceptIcon.className = 'fa fa-check-circle';
@@ -908,14 +928,13 @@ document.addEventListener("DOMContentLoaded", async function () {
                 acceptIcon.style.marginRight = '10px'; // Adjust the spacing as needed
                 acceptIcon.title = 'Accept Request'; // Tooltip for the icon
                 userDetailsDiv.appendChild(acceptIcon);
-
                 acceptIcon.addEventListener('click', async function() {
                     try {
                         let formData = new FormData();
                         formData.append('login_token', localStorage.getItem('login_token'));
-                        formData.append('user_email', user.email);
+                        formData.append('email', user.user_email);
                         formData.append('accepted', true);
-                        let response = await fetch(AUTH_API + "/accept_role/", {
+                        let response = await fetch(AUTH_API + "/accept_for_classroom/", {
                             method: 'POST',
                             body: formData,
                         });
@@ -955,9 +974,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                     try {
                         let formData = new FormData();
                         formData.append('login_token', localStorage.getItem('login_token'));
-                        formData.append('user_email', user.email);
+                        formData.append('email', user.user_email);
                         formData.append('accepted', false);
-                        let response = await fetch(AUTH_API + "/accept_role/", {
+                        let response = await fetch(AUTH_API + "/accept_for_classroom/", {
                             method: 'POST',
                             body: formData,
                         });

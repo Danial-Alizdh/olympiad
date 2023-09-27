@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     function createBoardElement(data) {
+        console.log(data)
         const boardCard = document.createElement('div');
         boardCard.classList.add('board-card');
 
@@ -62,11 +63,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const boardGoals = document.createElement('div');
         boardGoals.classList.add('board-goals');
-        boardGoals.textContent = data.goals;
+        boardGoals.textContent = `اهداف: ${data.goal}`;
 
         const boardLocation = document.createElement('div');
         boardLocation.classList.add('board-location');
-        boardLocation.textContent = data.location;
+        boardLocation.textContent = `آدرس: ${data.location}`;
 
         boardCard.appendChild(boardName);
         boardCard.appendChild(boardRate);
