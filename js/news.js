@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     addNews.addEventListener("click", function (event) {
-        // window.location.href = '../';
-        console.log('add news')
+        window.location.href = '../add/index.html?type=news';
     });
 
     // Define an async function to fetch data from the API

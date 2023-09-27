@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     addClassroom.addEventListener("click", function (event) {
-        // window.location.href = '../';
-        console.log('add class')
+        window.location.href = '../add/index.html?type=classroom';
     });
 
     // Define an async function to fetch data from the API
