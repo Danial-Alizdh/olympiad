@@ -1,5 +1,6 @@
 // const API = "http:79.127.120.168:2699/",
-const API = "https://olympiad-server.onrender.com/",
+// const API = "http://127.0.0.1:8000/api/",
+const API = "https://olympiad-server.onrender.com/api/",
     icons = {
     "واترپلو پسران": "fa fa-volleyball-ball",
     "اسکیت دختران و پسران": "fa fa-skating",
