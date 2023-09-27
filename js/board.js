@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    function createBoardCard(data) {
+    function createBoardElement(data) {
         const boardCard = document.createElement('div');
         boardCard.classList.add('board-card');
 

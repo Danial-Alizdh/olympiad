@@ -62,28 +62,29 @@ function displayUsers(users) {
 
         const new_role = document.createElement("p");
         new_role.textContent = `درخواست برای : ${
-            user.role === 'simple_user' ? 'کاربر عادی' : (user.role === 'coach' ? 'مربی' : (user.role === 'gym_manager' ? 'سالن‌دار' : (user.role === 'actor' ? 'قهرمان' : 'نقش کاربر تعریف نشده است')))        
+            user.role === 'simple_user' ? 'کاربر عادی' : (user.role === 'coach' ? 'مربی' : (user.role === 'gym_manager' ? 'سالن‌دار' : (user.role === 'actor' ? 'قهرمان' : (user.role === 'office_admin' ? 'ادمین اداره' : (user.role === 'board_admin' ? 'ادمین هیئت' : 'نقش کاربر تعریف نشده است')))))        
         }`;
         userDetailsDiv.appendChild(new_role);
 
         userDiv.appendChild(userDetailsDiv);
 
-        // Create a div for the user's license picture
-        const licensePicDiv = document.createElement("div");
-        licensePicDiv.classList.add("license-pic");
+        if (user.role !== 'office_admin' && user.role !== 'board_admin') {
+            // Create a div for the user's license picture
+            const licensePicDiv = document.createElement("div");
+            licensePicDiv.classList.add("license-pic");
 
-        // Create an image element for the user's license picture
-        const licenseImage = document.createElement("img");
-        licenseImage.src = user.document_image === null ? '../images/no_image.jpg' : (AUTH_API + user.document_image);
-        licenseImage.alt = `License ${index + 1}`;
-        licenseImage.classList.add("license-image");
-        licenseImage.addEventListener("click", function () {
-            toggleFullScreen(this);
-        });
-        licensePicDiv.appendChild(licenseImage);
+            // Create an image element for the user's license picture
+            const licenseImage = document.createElement("img");
+            licenseImage.src = user.document_image === null ? '../images/no_image.jpg' : (AUTH_API + user.document_image);
+            licenseImage.alt = `License ${index + 1}`;
+            licenseImage.classList.add("license-image");
+            licenseImage.addEventListener("click", function () {
+                toggleFullScreen(this);
+            });
+            licensePicDiv.appendChild(licenseImage);
 
-        userDiv.appendChild(licensePicDiv);
-
+            userDiv.appendChild(licensePicDiv);
+        }
 
         // Create a button for confirming the license
         const confirmButton = document.createElement("button");
@@ -222,6 +223,8 @@ async function fetchUsers(role) {
 fetchUsers('coach');
 fetchUsers('gym_manager');
 fetchUsers('actor');
+fetchUsers('office_admin');
+fetchUsers('board_admin');
 
 document.addEventListener("DOMContentLoaded",  function () {
     const logoutButton = document.getElementById("logoutButton");

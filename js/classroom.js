@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const addClass = document.getElementById("addClass");
+    const addClassroom = document.getElementById("addClass");
     const backButton = document.getElementById("backButton");
 
     backButton.addEventListener("click", function (event) {
         window.location.href = '../';
     });
 
-    addClass.addEventListener("click", function (event) {
+    addClassroom.addEventListener("click", function (event) {
         // window.location.href = '../';
         console.log('add class')
     });

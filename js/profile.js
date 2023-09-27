@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const emailInput = document.getElementById("email");
     const usernameInput = document.getElementById("username");
+    const phoneNumberInput = document.getElementById("phone_number");
     const bio = document.getElementById("bio");
     const role = document.getElementById("role");
     const profileImage = document.getElementById("profileImage");
@@ -381,12 +382,318 @@ document.addEventListener("DOMContentLoaded", async function () {
         selectedLicenseName.id = "selectedLicenseName";
         selectedLicenseName.textContent = data.document_image !== null ? "تصویر آپلود شده است" : "";
         container.appendChild(selectedLicenseName);
+    }
+
+    function addOfficeElements(data) {
+        let container = document.getElementById('additionalFieldsContainer');
+        container.innerHTML = '';
+
+        let nameDiv = document.createElement("div");
+        nameDiv.className = "info-label";
+        container.appendChild(nameDiv);
+
+        let nameLabel = document.createElement("label");
+        nameLabel.textContent = "نام :";
+        nameDiv.appendChild(nameLabel);
+
+        let nameInput = document.createElement("input");
+        nameInput.type = "text";
+        nameInput.id = "name";
+        nameInput.value = data.name;
+        nameDiv.appendChild(nameInput);
+
+        nameInput.addEventListener("input", function () {
+            // saveData.append('name', nameInput.value);
+            originData['name'] = nameInput.value;
+            updateHasChanges();
+        });
+
+        let locationDiv = document.createElement("div");
+        locationDiv.className = "info-label";
+        container.appendChild(locationDiv);
+
+        let locationLabel = document.createElement("label");
+        locationLabel.textContent = "آدرس :";
+        locationDiv.appendChild(locationLabel);
+
+        let locationInput = document.createElement("input");
+        locationInput.type = "text";
+        locationInput.id = "location";
+        locationInput.value = data.location;
+        locationDiv.appendChild(locationInput);
+
+        locationInput.addEventListener("input", function () {
+            // saveData.append('location', locationInput.value);
+            originData['location'] = locationInput.value;
+            updateHasChanges();
+        });
+
+
+        let selectManagerContainer = document.createElement("div");
+        selectManagerContainer.style.display = "flex";
+        selectManagerContainer.style.alignItems = "center";
+        container.appendChild(selectManagerContainer);
+
+        let selectManagerLabel = document.createElement("label");
+        selectManagerLabel.style.marginRight = "10px";
+        selectManagerLabel.textContent = "انتخاب مدیران :";
+        selectManagerContainer.appendChild(selectManagerLabel);
+
+        let selectManagerElement = document.createElement("select");
+        selectManagerElement.style.marginRight = "10px";
+        selectManagerElement.style.marginTop = "-5px";
+        selectManagerElement.style.border = "1px solid #ccc";
+        selectManagerElement.style.color = "#2c2c2c";
+        selectManagerElement.style.fontFamily = "B Nazanin, sans-serif";
+        selectManagerElement.style.fontSize = "16px";
+        selectManagerElement.style.padding = "5px";
+        selectManagerElement.style.borderRadius = "5px";
+        selectManagerElement.id = "authSelect";
+        selectManagerElement.name = "auth";
+        selectManagerElement.addEventListener("click", function () {
+            // saveData.append('gym', selectManagerElement.value);
+            // originData['gym'] = selectManagerElement.value;
+            selectFlag = true;
+            // updateHasChanges();
+        });
+        selectManagerContainer.appendChild(selectManagerElement);
+
+        // try {
+        //     let formData = new FormData();
+        //     formData.append('login_token', localStorage.getItem('login_token'));
+        //     formData.append('role', 'gym_manager');
+        //     let response = await fetch(AUTH_API + "/get_users_by_role/", {
+        //         method: 'POST',
+        //         body: formData,
+        //     });
+        //     let gyms = await response.json();
+        //     if (response.status === 200) {
+        //         if (gyms.data !== undefined) {
+        //             gyms.data.forEach(function (optionData) {
+        //                 let optionElement = document.createElement("option");
+        //                 optionElement.value = optionData.email;
+        //                 optionElement.textContent = optionData.name;
+        //                 selectElement.appendChild(optionElement);
+        //             });
+        //         }
+        //     } else {
+        //         Swal.fire({
+        //             icon: "error",
+        //             title: 'مشکلی رخ داده است',
+        //             text: gyms.errors.message,
+        //             showConfirmButton: !1,
+        //             timer: 2000
+        //         });
+        //     }
+        // } catch (error) {
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: 'مشکلی رخ داده است',
+        //         text: error,
+        //         showConfirmButton: !1,
+        //         timer: 2000
+        //     });
+        // }
+
+        let selectAuthContainer = document.createElement("div");
+        selectAuthContainer.style.display = "flex";
+        selectAuthContainer.style.alignItems = "center";
+        container.appendChild(selectAuthContainer);
+
+        let selectAuthLabel = document.createElement("label");
+        selectAuthLabel.style.marginRight = "10px";
+        selectAuthLabel.textContent = "انتخاب کارشناسان :";
+        selectAuthContainer.appendChild(selectAuthLabel);
+
+        let selectAuthElement = document.createElement("select");
+        selectAuthElement.style.marginRight = "10px";
+        selectAuthElement.style.marginTop = "-5px";
+        selectAuthElement.style.border = "1px solid #ccc";
+        selectAuthElement.style.color = "#2c2c2c";
+        selectAuthElement.style.fontFamily = "B Nazanin, sans-serif";
+        selectAuthElement.style.fontSize = "16px";
+        selectAuthElement.style.padding = "5px";
+        selectAuthElement.style.borderRadius = "5px";
+        selectAuthElement.id = "authSelect";
+        selectAuthElement.name = "auth";
+        selectAuthElement.addEventListener("click", function () {
+            // saveData.append('gym', selectAuthElement.value);
+            // originData['gym'] = selectAuthElement.value;
+            selectFlag = true;
+            // updateHasChanges();
+        });
+        selectAuthContainer.appendChild(selectAuthElement);
+
+        // try {
+        //     let formData = new FormData();
+        //     formData.append('login_token', localStorage.getItem('login_token'));
+        //     formData.append('role', 'gym_manager');
+        //     let response = await fetch(AUTH_API + "/get_users_by_role/", {
+        //         method: 'POST',
+        //         body: formData,
+        //     });
+        //     let gyms = await response.json();
+        //     if (response.status === 200) {
+        //         if (gyms.data !== undefined) {
+        //             gyms.data.forEach(function (optionData) {
+        //                 let optionElement = document.createElement("option");
+        //                 optionElement.value = optionData.email;
+        //                 optionElement.textContent = optionData.name;
+        //                 selectElement.appendChild(optionElement);
+        //             });
+        //         }
+        //     } else {
+        //         Swal.fire({
+        //             icon: "error",
+        //             title: 'مشکلی رخ داده است',
+        //             text: gyms.errors.message,
+        //             showConfirmButton: !1,
+        //             timer: 2000
+        //         });
+        //     }
+        // } catch (error) {
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: 'مشکلی رخ داده است',
+        //         text: error,
+        //         showConfirmButton: !1,
+        //         timer: 2000
+        //     });
+        // }
+    }
+
+    function addBoardElements(data) {
+        let container = document.getElementById('additionalFieldsContainer');
+        container.innerHTML = '';
+
+        let nameDiv = document.createElement("div");
+        nameDiv.className = "info-label";
+        container.appendChild(nameDiv);
+
+        let nameLabel = document.createElement("label");
+        nameLabel.textContent = "نام :";
+        nameDiv.appendChild(nameLabel);
+
+        let nameInput = document.createElement("input");
+        nameInput.type = "text";
+        nameInput.id = "name";
+        nameInput.value = data.name;
+        nameDiv.appendChild(nameInput);
+
+        nameInput.addEventListener("input", function () {
+            // saveData.append('name', nameInput.value);
+            originData['name'] = nameInput.value;
+            updateHasChanges();
+        });
+
+        let goalDiv = document.createElement("div");
+        goalDiv.className = "info-label";
+        container.appendChild(goalDiv);
+
+        let goalLabel = document.createElement("label");
+        goalLabel.textContent = "اهداف :";
+        goalDiv.appendChild(goalLabel);
+
+        let goalInput = document.createElement("input");
+        goalInput.type = "text";
+        goalInput.id = "goal";
+        goalInput.value = data.goal;
+        goalDiv.appendChild(goalInput);
+
+        goalInput.addEventListener("input", function () {
+            // saveData.append('goal', goalInput.value);
+            originData['goal'] = goalInput.value;
+            updateHasChanges();
+        });
+
+        let locationDiv = document.createElement("div");
+        locationDiv.className = "info-label";
+        container.appendChild(locationDiv);
+
+        let locationLabel = document.createElement("label");
+        locationLabel.textContent = "آدرس :";
+        locationDiv.appendChild(locationLabel);
+
+        let locationInput = document.createElement("input");
+        locationInput.type = "text";
+        locationInput.id = "location";
+        locationInput.value = data.location;
+        locationDiv.appendChild(locationInput);
+
+        locationInput.addEventListener("input", function () {
+            // saveData.append('location', locationInput.value);
+            originData['location'] = locationInput.value;
+            updateHasChanges();
+        });
+
 
         let selectContainer = document.createElement("div");
         selectContainer.style.display = "flex";
         selectContainer.style.alignItems = "center";
         container.appendChild(selectContainer);
+
+        let selectLabel = document.createElement("label");
+        selectLabel.style.marginRight = "10px";
+        selectLabel.textContent = "انتخاب مسئولان :";
+        selectContainer.appendChild(selectLabel);
+
+        let selectElement = document.createElement("select");
+        selectElement.style.marginRight = "10px";
+        selectElement.style.marginTop = "-5px";
+        selectElement.style.border = "1px solid #ccc";
+        selectElement.style.color = "#2c2c2c";
+        selectElement.style.fontFamily = "B Nazanin, sans-serif";
+        selectElement.style.fontSize = "16px";
+        selectElement.style.padding = "5px";
+        selectElement.style.borderRadius = "5px";
+        selectElement.id = "authSelect";
+        selectElement.name = "auth";
+        selectElement.addEventListener("click", function () {
+            // saveData.append('gym', selectElement.value);
+            // originData['gym'] = selectElement.value;
+            selectFlag = true;
+            // updateHasChanges();
+        });
+        selectContainer.appendChild(selectElement);
+
+        // try {
+        //     let formData = new FormData();
+        //     formData.append('login_token', localStorage.getItem('login_token'));
+        //     formData.append('role', 'gym_manager');
+        //     let response = await fetch(AUTH_API + "/get_users_by_role/", {
+        //         method: 'POST',
+        //         body: formData,
+        //     });
+        //     let gyms = await response.json();
+        //     if (response.status === 200) {
+        //         if (gyms.data !== undefined) {
+        //             gyms.data.forEach(function (optionData) {
+        //                 let optionElement = document.createElement("option");
+        //                 optionElement.value = optionData.email;
+        //                 optionElement.textContent = optionData.name;
+        //                 selectElement.appendChild(optionElement);
+        //             });
+        //         }
+        //     } else {
+        //         Swal.fire({
+        //             icon: "error",
+        //             title: 'مشکلی رخ داده است',
+        //             text: gyms.errors.message,
+        //             showConfirmButton: !1,
+        //             timer: 2000
+        //         });
+        //     }
+        // } catch (error) {
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: 'مشکلی رخ داده است',
+        //         text: error,
+        //         showConfirmButton: !1,
+        //         timer: 2000
+        //     });
+        // }
     }
+
 
     function pre_process(data) {
         const changeRole = document.getElementById('changeRole');
@@ -425,6 +732,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             addGymManagerElements(data);
         } else if (data.role === 'actor') {
             addActorElements(data);
+        } else if (data.role === 'board_admin') {
+            addBoardElements(data);
+        } else if (data.role === 'office_admin') {
+            addOfficeElements(data);
         }
     }
 
@@ -440,6 +751,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (response.status === 200) {
             emailInput.value = originData.email;
             usernameInput.value = originData.username;
+            phoneNumberInput.value = originData.phone_number;
             profileImagePreview.src = originData.image_profile === null ? '../images/no_pic.png' : (AUTH_API + originData.image_profile);
             bio.value = originData.bio;
             role.textContent = originData.role === 'simple_user' ? 'کاربر عادی' : (originData.role === 'coach' ? 'مربی' : (originData.role === 'gym_manager' ? 'سالن‌دار' : (originData.role === 'actor' ? 'قهرمان' : (originData.role === 'office_admin' ? 'ادمین اداره' : (originData.role === 'office_manager' ? 'مدیر اداره' : (originData.role === 'office_expert' ? 'کارشناس اداره' : (originData.role === 'board_admin' ? 'ادمین هیئت' : (originData.role === 'board_authorities' ? 'مسئول هیئت' : 'نقش کاربر تعریف نشده است'))))))));
@@ -515,6 +827,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         originData['login_token'] = localStorage.getItem('login_token');
         originData['email'] = emailInput.value;
         originData['username'] = usernameInput.value;
+        originData['phone_number'] = phoneNumberInput.value;
         originData['bio'] = bio.value;
         if (profileImage.files[0]) {
             originData['image_profile'] = profileImage.files[0];
@@ -613,8 +926,20 @@ document.addEventListener("DOMContentLoaded", async function () {
                     addActorElements({
                         'field': null,
                         'document_image': null});
-                } else if (result.value === 'ادمین هیئت' || result.value === 'ادمین اداره') {
-                    saveButton.disabled = true;
+                } else if (result.value === 'ادمین هیئت') {
+                    addBoardElements({
+                        'name': null,
+                        'goal': null,
+                        'location': null,
+                        'auth': null,
+                    });
+                } else if (result.value === 'ادمین اداره') {
+                    addOfficeElements({
+                        'name': null,
+                        'location': null,
+                        'auth': null,
+                        'manager': null,
+                    })
                 }
                 process.style.display = 'inline-block'
             }

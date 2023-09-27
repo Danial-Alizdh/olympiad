@@ -17,15 +17,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
             let data = await response.json();
             if (response.status === 200) {
-                if (data.addOffice) {
-                    addOffice.style.display = 'flex';
-                }
                 if (data.office) {
                     return data.office
                 }
                 Swal.fire({
                     icon: 'info',
-                    title: 'خبری یافت نشد',
+                    title: 'اداره‌ای یافت نشد',
                     showConfirmButton: !1,
                     timer: 2000
                 });
@@ -79,7 +76,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     async function initializeOffice() {
         const officeData = await fetchData();
         const officeContainer = document.getElementById('office-list');
-
         officeData.forEach(office => {
             const officeElement = createOfficeElement(office);
             officeContainer.appendChild(officeElement);
