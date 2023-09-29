@@ -1,4 +1,9 @@
 /* Reset some default styles */
+@font-face {
+    font-family: "B Nazanin";
+    src: url("./font/b_nazanin.ttf");
+}
+
 body, h2, p, button {
     margin: 0;
     padding: 0;

@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "B Kamran";
+    src: url("./font/b_kamran.ttf");
+}
+
+@font-face {
+    font-family: "B Nazanin";
+    src: url("./font/b_nazanin.ttf");
+}
+
 body {
     margin: 0;
     padding: 0;

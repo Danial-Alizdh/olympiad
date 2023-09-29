@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "B Nazanin";
+    src: url("./font/b_nazanin.ttf");
+}
+
 body {
     font-family: 'B Nazanin', sans-serif;
     margin: 20px;
