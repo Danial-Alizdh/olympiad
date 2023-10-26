@@ -5,9 +5,9 @@
 
 body {
     font-family: "B Nazanin", sans-serif;
-    background-color: #e7e7e7;
-    background-image: url("../images/bg1.jpg");
-    background-size: cover;
+    /*background-color: #ffffff;*/
+    /*background-image: url("../images/bg14.jpg");*/
+    /*background-size: cover;*/
     margin: 0;
     padding: 0;
 }
@@ -17,10 +17,10 @@ body {
     /*background-color: #fff;*/
     padding: 50px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
     justify-content: inherit;
     align-items: revert;
 }
@@ -113,18 +113,18 @@ input[type="password"],
 textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #8de1ff;
+    border: 1px solid #ececec;
     border-radius: 8px;
     font-family: "B Nazanin", sans-serif;
     font-size: 14px;
-    background-color: #8de1ff;
+    background-color: #eeeeee;
     color: #003d54;
 }
 
 button {
     font-family: "B Nazanin", sans-serif;
     font-size: 18px;
-    background-color: #237a96;
+    background-color: #ea2994;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -136,7 +136,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #cc0570;
 }
 
 .centered-button {

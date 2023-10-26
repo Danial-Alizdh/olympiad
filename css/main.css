@@ -13,13 +13,13 @@ body {
     padding: 0;
     font-size: 22px;
     font-family: "B Kamran", sans-serif;
-    background-color: #e7e7e7;
-    background-image: url("../images/bg1.jpg");
-    background-size: cover;
+    background-color: #e5eefa;
+    /*background-image: url("../images/bg12.jpg");*/
+    /*background-size: cover;*/
 }
 
 .header {
-    background-color: #237a96;
+    background-color: #c5d8f3;
     color: #fff;
     padding: 10px;
     text-align: left;
@@ -39,8 +39,8 @@ body {
 
 .signin-button,
 .signup-button {
-    background-color: #237a96;
-    color: #ffffff;
+    background-color: #bacee8;
+    color: #3d3d3d;
     font-size: 12px;
     padding: 10px 20px;
     border: none;
@@ -65,8 +65,8 @@ body {
 .username {
     display: none;
     padding: 10px 20px;
-    background-color: #237a96;
-    color: #ffffff;
+    background-color: #bacee8;
+    color: #3d3d3d;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -98,16 +98,16 @@ body {
 
 .buttons {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .button {
     padding: 10px;
-    background-color: #12a5d2;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -115,29 +115,24 @@ body {
 }
 
 .button .icon {
-    margin: -10% auto 0;
-    width: 50px;
-    height: 50px;
+    margin: auto auto 10px;
 }
 
 .button .title {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #eaeaea;
-}
-
-.button .description {
-    color: #594545;
-    margin-top: 5px;
+    /*font-weight: bold;*/
+    /*margin-top: 5px;*/
+    color: #000000;
 }
 
 @media (max-width: 768px) {
-    .buttons {
+    .button-container {
         flex-direction: column;
+        align-items: center;
     }
 
     .button {
         width: 80%;
+        height: 100px;
     }
 }
 
@@ -153,7 +148,7 @@ body {
 .sentence p {
     font-size: 16px;
     font-family: 'B Nazanin';
-    color: #a9a9a9;
+    color: #757575;
 }
 /* CSS for the footer */
 .footer {

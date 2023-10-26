@@ -5,8 +5,8 @@
 
 body {
     font-family: "B Nazanin", sans-serif;
-    background-color: #e7e7e7;
-    background-image: url("../images/bg1.jpg");
+    background-color: #e5eefa;
+    /*background-image: url("../images/bg6.jpg");*/
     margin: 0;
     padding: 0;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 #backButton {
-    color: #d9d9d9; /* Text color */
+    color: #000000; /* Text color */
     position: fixed;
     top: 10px; /* Adjust this value to set the desired top position */
     left: 10px; /* Adjust this value to set the desired left position */
@@ -66,6 +66,7 @@ h1 {
 
 .coach {
     background-color: #12a5d2;
+    background-image: url("../images/bg6.jpg");
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -85,7 +86,7 @@ h1 {
 .coach h2 {
     margin-top: 10px;
     font-size: 18px;
-    color: #f6f6f6;
+    color: #000000;
 }
 
 .social-media {
@@ -112,6 +113,7 @@ h1 {
 
 .gym {
     background-color: #12a5d2;
+    background-image: url("../images/bg6.jpg");
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -131,7 +133,7 @@ h1 {
 .gym h2 {
     margin-top: 10px;
     font-size: 18px;
-    color: #f6f6f6;
+    color: #000000;
 }
 
 .gym p {
@@ -155,7 +157,8 @@ h1 {
 }
 
 .news {
-    background-color: #12a5d2;
+    background-color: #ffffff;
+    background-image: url("../images/bg6.jpg");
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -173,7 +176,7 @@ h1 {
 .news h2 {
     margin-top: 10px;
     font-size: 18px;
-    color: #f6f6f6;
+    color: #000000;
 }
 
 .news p {
@@ -190,6 +193,7 @@ h1 {
 
 .actor {
     background-color: #12a5d2;
+    background-image: url("../images/bg6.jpg");
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
@@ -201,7 +205,7 @@ h1 {
 .actor h2 {
     margin-top: 10px;
     font-size: 18px;
-    color: #f6f6f6;
+    color: #000000;
 }
 
 .actor p {
@@ -212,7 +216,7 @@ h1 {
 
 .actor img {
     border-radius: 5px;
-    max-width: 100px;
+    max-width: 200px;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -221,11 +225,11 @@ h1 {
 .star-rating {
     margin-top: -10px;
     font-size: 28px;
-    color: #fffb05;
+    color: #fffa00;
 }
 
 .star {
-    color: #c5c5c5;
+    color: #cecece;
 }
 
 /* Style for the checkboxes */
