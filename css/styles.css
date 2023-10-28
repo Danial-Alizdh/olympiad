@@ -254,7 +254,7 @@ button:hover {
 }
 
 #additionalFieldsContainer h3 {
-    color: #ffffff;
+    color: #000000;
 }
 
 .upload_pics:hover {
@@ -271,7 +271,7 @@ button:hover {
 }
 
 .rate h2 {
-    color: #fdf900;
+    color: #f1c208;
 }
 
 .custom-textarea {
@@ -289,8 +289,9 @@ button:hover {
 
 /* Style for each user box */
 .user-box {
-    background-color: #12a5d2; /* Background color for the box */
-    border: 1px solid #12a5d2; /* Border around the box */
+    /*background-color: #12a5d2; !* Background color for the box *!*/
+    /*border: 1px solid #12a5d2; !* Border around the box *!*/
+    background-image: url("../images/bg8.jpg");
     padding: 10px; /* Padding inside the box */
     margin: 10px 30px 0; /* Spacing between user boxes */
     border-radius: 10px; /* Rounded corners */
@@ -310,7 +311,7 @@ button:hover {
 .user-details {
     font-size: 16px; /* Adjust the font size as needed */
     text-align: center; /* Center the text within the user details */
-    color: #ececec;
+    color: #000000;
 }
 
 /* Style for user details text */
