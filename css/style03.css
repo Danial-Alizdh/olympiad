@@ -5,14 +5,14 @@
 
 body {
     font-family: "B Nazanin", sans-serif;
-    background-color: #e7e7e7;
-    background-image: url("../images/bg1.jpg");
+    background-color: #e5eefa;
+    /*background-image: url("../images/bg6.jpg");*/
     margin: 0;
     padding: 0;
 }
 
 #backButton {
-    color: #d9d9d9; /* Text color */
+    color: #000000; /* Text color */
     position: fixed;
     top: 10px; /* Adjust this value to set the desired top position */
     left: 10px; /* Adjust this value to set the desired left position */
@@ -50,26 +50,26 @@ body {
 }
 
 .board-card {
-    width: 300px;
     background-color: #12a5d2;
-    border: 1px solid #12a5d2;
-    border-radius: 5px;
-    padding: 20px;
+    background-image: url("../images/bg6.jpg");
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 35px 20px 20px;
+    padding: 20px;
+    text-align: right;
+    margin-bottom: 10px;
 }
 
 /* Style for the board's name */
 .board-name {
     font-size: 24px;
     font-weight: bold;
-    color: #f6f6f6;
+    color: #000000;
 }
 
 /* Style for the star rating */
 .board-rate,
 .office-rate {
-    color: #ffd700; /* Gold color for stars */
+    color: #fffa00; /* Gold color for stars */
     font-size: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -86,7 +86,8 @@ body {
 /* CSS for the class list */
 .class-list,
 .game-list,
-.office-list {
+.office-list,
+.board-container {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
@@ -97,6 +98,7 @@ body {
 .game-item,
 .office-item {
     background-color: #12a5d2;
+    background-image: url("../images/bg6.jpg");
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -110,7 +112,7 @@ body {
 .office-name {
     font-size: 24px;
     font-weight: bold;
-    color: #f6f6f6;
+    color: #000000;
     margin-bottom: 10px;
 }
 

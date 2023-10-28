@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
             });
             let data = await response.json();
+            console.log(data)
             if (response.status === 200) {
                 if (data.addNews) {
                     addNews.style.display = 'flex';
